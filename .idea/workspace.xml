@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,7 +61,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570712384472</updated>
-      <workItem from="1570712388588" duration="3097000" />
+      <workItem from="1570712388588" duration="3370000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -71,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570715382728</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Application.java created. That's the entry point (main).">
+      <created>1570715655189</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570715655189</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,6 +96,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit .ida/vcs.xml and .idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit .ida/vcs.xml and .idea/workspace.xml" />
+    <MESSAGE value="Application.java created. That's the entry point (main)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Application.java created. That's the entry point (main)." />
   </component>
 </project>
