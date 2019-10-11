@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="">
+    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="Hello controller commented.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/entity/BuonoSconto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/entity/Multa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/entity/Prenotazione.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/entity/Veicolo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +45,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../car-rental-springMVC" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -86,7 +92,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1570712384472</updated>
-      <workItem from="1570712388588" duration="5864000" />
+      <workItem from="1570712388588" duration="7208000" />
+      <workItem from="1570778057976" duration="3025000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -109,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570715953504</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Hello controller commented.">
+      <created>1570718946784</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570718946784</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,7 +134,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -130,6 +146,7 @@
     <MESSAGE value="Commit .ida/vcs.xml and .idea/workspace.xml" />
     <MESSAGE value="Application.java created. That's the entry point (main)." />
     <MESSAGE value="Hello controller added. It's a controller just to try if it works. Will be eliminated." />
-    <option name="LAST_COMMIT_MESSAGE" value="Hello controller added. It's a controller just to try if it works. Will be eliminated." />
+    <MESSAGE value="Hello controller commented." />
+    <option name="LAST_COMMIT_MESSAGE" value="Hello controller commented." />
   </component>
 </project>
