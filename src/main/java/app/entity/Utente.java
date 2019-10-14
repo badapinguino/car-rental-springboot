@@ -37,6 +37,7 @@ public class Utente {
     @Column(name="id", nullable = false)
     private int id;
 
+    @NotNull
     @Size(min=lunghezzaCampoCodiceFiscale, max = lunghezzaCampoCodiceFiscale)
     @Column(name = "codice_fiscale", nullable = false, unique = true)
     private String codiceFiscale;
@@ -62,7 +63,6 @@ public class Utente {
     private boolean superuser;
 
     @NotNull
-    @Size(max=lunghezzaCampoPassword)
     @Column(name = "password_utente", nullable = false)
     private String password;
 

@@ -1,4 +1,4 @@
-package app;
+package app.Authentication;
 
 import app.service.UtentiService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -20,17 +22,48 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         @Autowired
         private UtentiService utentiService;
 
+        @Autowired
+        private RestAuthenticationEntryPoint restAuthenticationEntryPoint;
+
+        @Autowired
+        private MySavedRequestAwareAuthenticationSuccessHandler mySuccessHandler;
+
+        private SimpleUrlAuthenticationFailureHandler myFailureHandler = new SimpleUrlAuthenticationFailureHandler();
+
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             http
-                    .authorizeRequests()
-                    .anyRequest().authenticated()
-                    .and()
-                    .httpBasic()
-                    .and()
-                    .sessionManagement()
-                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .csrf().disable()
+                .exceptionHandling()
+                .authenticationEntryPoint(restAuthenticationEntryPoint)
+                .and()
+                .authorizeRequests()
+                .antMatchers("/api/**").authenticated()
+//                    .antMatchers("/api/admin/**").hasRole("ADMIN")
+                .and()
+                .formLogin()
+                .successHandler(mySuccessHandler)
+                .failureHandler(myFailureHandler)
+                .and()
+                .logout();
         }
+
+
+
+//        @Override
+//        protected void configure(HttpSecurity http) throws Exception {
+//            http
+//                    .authorizeRequests()
+//                    .anyRequest().authenticated()
+//                    .and()
+//                    .httpBasic()
+////                    .and()
+////                    .formLogin().loginPage("/login").failureUrl("/login?error").permitAll()
+//                    .and()
+//                    .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/")
+////                    .logout().logoutUrl("j_spring_security_logout").logoutSuccessUrl("/")
+//            .invalidateHttpSession(true);
+//        }
 
         @Bean
         public BCryptPasswordEncoder passwordEncoder(){
@@ -49,6 +82,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         protected void configure(AuthenticationManagerBuilder auth) throws Exception {
             auth.authenticationProvider(authenticationProvider());
         }
+
+//        @Override
+//        protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//            auth.inMemoryAuthentication()
+//                    .withUser("admin").password(encoder().encode("adminPass")).roles("ADMIN")
+//                    .and()
+//                    .withUser("user").password(encoder().encode("userPass")).roles("USER");
+//        }
 
     }
 
