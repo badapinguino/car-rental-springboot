@@ -1,4 +1,4 @@
-package app.Authentication;
+package app.authentication;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;

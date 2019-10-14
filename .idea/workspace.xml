@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Authentication/MySavedRequestAwareAuthenticationSuccessHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Authentication/RestAuthenticationEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/Authentication/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/Authentication/JwtAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/Authentication/SecurityConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/CarRentalUserDetailsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/UtenteRepositoryCustom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/UtenteRepositoryCustomImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/UtenteRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Authentication/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Authentication/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Authentication/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/HelloController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +69,7 @@
       <module name="car-rental-springboot" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="app.Authentication.*" />
+          <option name="PATTERN" value="app.authentication.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -103,7 +97,7 @@
       <workItem from="1570712388588" duration="7208000" />
       <workItem from="1570778057976" duration="17103000" />
       <workItem from="1571036305246" duration="8977000" />
-      <workItem from="1571054799919" duration="951000" />
+      <workItem from="1571054799919" duration="7087000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -147,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570809570725</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Authentication reply with 401 if username and password are incorrect, otherwise it replies with 200 OK. Still to add JWT Token">
+      <created>1571055843838</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571055843838</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +174,8 @@
     <MESSAGE value="Hello controller commented." />
     <MESSAGE value="Added all entities" />
     <MESSAGE value="Created all the Spring security classes. There is still a problem with jdbc dependency to add" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created all the Spring security classes. There is still a problem with jdbc dependency to add" />
+    <MESSAGE value="Authentication reply with 401 if username and password are incorrect, otherwise it replies with 200 OK. Still to add JWT Token" />
+    <option name="LAST_COMMIT_MESSAGE" value="Authentication reply with 401 if username and password are incorrect, otherwise it replies with 200 OK. Still to add JWT Token" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
