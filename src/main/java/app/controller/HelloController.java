@@ -18,5 +18,4 @@ public class HelloController {
         return "Hello from private API controller";
     }
 
-
 }
