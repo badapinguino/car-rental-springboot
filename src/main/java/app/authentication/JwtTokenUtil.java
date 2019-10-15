@@ -23,21 +23,25 @@ import java.util.stream.Collectors;
 @Component
 public class JwtTokenUtil implements Serializable {
     private static final long serialVersionUID = -3301605591108950415L;
-    static final String CLAIM_KEY_USERNAME = "sub";
-    static final String CLAIM_KEY_AUDIENCE = "audience";
-    static final String CLAIM_KEY_CREATED = "iat";
-    static final String CLAIM_KEY_AUTHORITIES = "roles";
-    static final String CLAIM_KEY_IS_ENABLED = "isEnabled";
+    private static final String CLAIM_KEY_USERNAME = "sub";
+    private static final String CLAIM_KEY_AUDIENCE = "audience";
+    private static final String CLAIM_KEY_CREATED = "iat";
+    private static final String CLAIM_KEY_AUTHORITIES = "roles";
+    private static final String CLAIM_KEY_IS_ENABLED = "isEnabled";
     private static final String AUDIENCE_UNKNOWN = "unknown";
-    private static final String AUDIENCE_WEB = "web";
-    private static final String AUDIENCE_MOBILE = "mobile";
-    private static final String AUDIENCE_TABLET = "tablet";
+//    private static final String AUDIENCE_WEB = "web";
+//    private static final String AUDIENCE_MOBILE = "mobile";
+//    private static final String AUDIENCE_TABLET = "tablet";
     @Value("${jwt.secret}")
     private String secret;
-    @Autowired
+//    @Autowired
     ObjectMapper objectMapper;
     @Value("${jwt.expiration}")
     private Long expiration;
+
+    public JwtTokenUtil(ObjectMapper objectMapper){
+        this.objectMapper = objectMapper;
+    }
 
     public String getUsernameFromToken(String token) {
         String username;
@@ -138,10 +142,10 @@ public class JwtTokenUtil implements Serializable {
 //        return audience;
 //    }
 
-    private Boolean ignoreTokenExpiration(String token) {
-        String audience = getAudienceFromToken(token);
-        return (AUDIENCE_TABLET.equals(audience) || AUDIENCE_MOBILE.equals(audience));
-    }
+//    private Boolean ignoreTokenExpiration(String token) {
+//        String audience = getAudienceFromToken(token);
+//        return (AUDIENCE_TABLET.equals(audience) || AUDIENCE_MOBILE.equals(audience));
+//    }
 
     public String generateToken(UserDetails userDetails/*, Device device*/) throws JsonProcessingException {
         Map<String, Object> claims = new HashMap<>();
@@ -165,7 +169,7 @@ public class JwtTokenUtil implements Serializable {
 
     public Boolean canTokenBeRefreshed(String token) {
         final Date created = getCreatedDateFromToken(token);
-        return (!isTokenExpired(token) || ignoreTokenExpiration(token));
+        return (!isTokenExpired(token) /*|| ignoreTokenExpiration(token)*/);
     }
 
     public String refreshToken(String token) {

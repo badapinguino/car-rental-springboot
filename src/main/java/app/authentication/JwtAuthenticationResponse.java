@@ -13,9 +13,11 @@ public class JwtAuthenticationResponse implements Serializable {
     private static final long serialVersionUID = 1250166508152483573L;
 
     private final String username;
+    private String jwt;
     Collection<? extends GrantedAuthority> authorities;
 
-    public JwtAuthenticationResponse(String username, Collection<? extends GrantedAuthority> authorities) {
+    public JwtAuthenticationResponse(String username, Collection<? extends GrantedAuthority> authorities, String jwt) {
+        this.jwt = jwt;
         this.username = username;
         this.authorities = authorities;
     }
@@ -30,5 +32,13 @@ public class JwtAuthenticationResponse implements Serializable {
 
     public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
         this.authorities = authorities;
+    }
+
+    public String getJwt() {
+        return jwt;
+    }
+
+    public void setJwt(String jwt) {
+        this.jwt = jwt;
     }
 }

@@ -32,7 +32,7 @@ public class AuthenticationRestController {
     private JwtTokenUtil jwtTokenUtil;
 //    @Qualifier("JwtUserDetailsServiceImpl")
     @Autowired
-    private UserDetailsService userDetailsService;
+    private JwtUserDetailsServiceImpl userDetailsService; // al posto di UserDetailsService
 
     @RequestMapping(value = "login", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest, /*Device device,*/ HttpServletResponse response) throws AuthenticationException, JsonProcessingException {
@@ -49,7 +49,7 @@ public class AuthenticationRestController {
         final String token = jwtTokenUtil.generateToken(userDetails/*, device*/);
         response.setHeader(tokenHeader,token);
         // Ritorno il token
-        return ResponseEntity.ok(new JwtAuthenticationResponse(userDetails.getUsername(),userDetails.getAuthorities()));
+        return ResponseEntity.ok(new JwtAuthenticationResponse(userDetails.getUsername(),userDetails.getAuthorities(), token));
     }
     @RequestMapping(value = "protected/refresh-token", method = RequestMethod.GET)
     public ResponseEntity<?> refreshAndGetAuthenticationToken(HttpServletRequest request, HttpServletResponse response) {
@@ -59,7 +59,7 @@ public class AuthenticationRestController {
         if (jwtTokenUtil.canTokenBeRefreshed(token)) {
             String refreshedToken = jwtTokenUtil.refreshToken(token);
             response.setHeader(tokenHeader,refreshedToken);
-            return ResponseEntity.ok(new JwtAuthenticationResponse(userDetails.getUsername(),userDetails.getAuthorities()));
+            return ResponseEntity.ok(new JwtAuthenticationResponse(userDetails.getUsername(),userDetails.getAuthorities(), token));
         } else {
             return ResponseEntity.badRequest().body(null);
         }

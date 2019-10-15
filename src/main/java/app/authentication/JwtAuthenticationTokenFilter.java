@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     @Autowired
-    private UserDetailsService userDetailsService;
+    private JwtUserDetailsServiceImpl userDetailsService; // invece di UserDetailsService
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
     @Value("${jwt.header}")
