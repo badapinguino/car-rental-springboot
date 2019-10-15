@@ -1,8 +1,7 @@
 package app.authentication;
 
-import app.DAO.UtenteRepository;
+import app.repository.UtenteRepository;
 import app.entity.Utente;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

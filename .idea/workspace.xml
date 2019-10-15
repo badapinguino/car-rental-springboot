@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/AuthenticationRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/AuthenticationRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/JwtAuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/JwtAuthenticationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/JwtAuthenticationTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/JwtAuthenticationTokenFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DAO/UtenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repository/UtenteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/JwtUserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/JwtUserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Application.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +98,7 @@
       <workItem from="1570778057976" duration="17103000" />
       <workItem from="1571036305246" duration="8977000" />
       <workItem from="1571054799919" duration="11256000" />
-      <workItem from="1571122650883" duration="17654000" />
+      <workItem from="1571122650883" duration="25047000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -169,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571135452891</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Minor changes to Authentication.">
+      <created>1571146985223</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1571146985223</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,7 +207,8 @@
     <MESSAGE value="Added JWT token but it doesn't work" />
     <MESSAGE value="Added JWT token and it works!" />
     <MESSAGE value="Eliminated authentication.old. It was never used and all commented." />
-    <option name="LAST_COMMIT_MESSAGE" value="Eliminated authentication.old. It was never used and all commented." />
+    <MESSAGE value="Minor changes to Authentication." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes to Authentication." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

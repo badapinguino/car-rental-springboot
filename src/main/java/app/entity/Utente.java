@@ -7,12 +7,13 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
 @Table(name = "Utente")
-public class Utente {
+public class Utente implements Serializable {
     private static final int lunghezzaCampoCognome = 80;
     private static final int lunghezzaCampoNome = 80;
     private static final int lunghezzaCampoCodiceFiscale = 16;
