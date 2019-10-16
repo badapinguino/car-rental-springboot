@@ -1,19 +1,16 @@
-package app.entity;
+package app.DTO;
 
-
+import app.entity.Prenotazione;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Set;
 
-@Entity
-@Table(name = "Utente")
-public class Utente implements Serializable {
+public class UtenteDTO {
     private static final int lunghezzaCampoCognome = 80;
     private static final int lunghezzaCampoNome = 80;
     private static final int lunghezzaCampoCodiceFiscale = 16;
@@ -28,45 +25,28 @@ public class Utente implements Serializable {
         return lunghezzaCampoNome;
     }
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="id", nullable = false)
     private int id;
 
-    @NotNull
     @Size(min=lunghezzaCampoCodiceFiscale, max = lunghezzaCampoCodiceFiscale)
-    @Column(name = "codice_fiscale", nullable = false, unique = true)
     private String codiceFiscale;
 
-    @NotNull
     @Size(max = lunghezzaCampoCognome)
-    @Column(name = "cognome", nullable = false)
     private String cognome;
 
-    @NotNull
     @Size(max = lunghezzaCampoNome)
-    @Column(name = "nome", nullable = false)
     private String nome;
 
-    @NotNull
     @Past
     @DateTimeFormat(pattern="yyyy-MM-dd") //controllare se va bene così "dd/MM/yyyy"
-    @Column(name = "data_nascita", nullable = false)
     private LocalDate dataNascita;
 
-    @NotNull
-    @Column(name = "superuser", nullable = false)
     private boolean superuser;
 
-    @NotNull
-    @Column(name = "password_utente", nullable = false)
     private String password;
 
     @Size(max=256)
-    @Column(name = "immagine")
     private String immagine;
 
-    @OneToMany(mappedBy = "utente", cascade=CascadeType.REMOVE)
     private Set<Prenotazione> prenotazioni;
 
     public int getId() {

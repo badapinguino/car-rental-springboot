@@ -1,5 +1,6 @@
 package app.controller;
 
+import app.DTO.UtenteDTO;
 import app.entity.Utente;
 import app.service.UtentiService;
 import org.springframework.web.bind.annotation.*;
@@ -38,8 +39,8 @@ public class UtenteController {
     //  perché viene assegnato all'utente temporaneo che poi viene sostituito
     //  con quello dell'utente da modificare presente nel DB
     @RequestMapping(path = "/utenti", method = RequestMethod.POST)
-    public Utente creaModificaUtente(@RequestBody Utente utente) {
-        return utentiService.creaModificaUtente(utente);
+    public Utente creaModificaUtente(@RequestBody UtenteDTO utenteDTO) {
+        return utentiService.creaModificaUtente(utenteDTO);
     }
 
     @RequestMapping(value = "/utenti/{id}", method = RequestMethod.DELETE)

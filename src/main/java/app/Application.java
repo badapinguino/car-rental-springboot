@@ -2,9 +2,11 @@ package app;
 
 import app.repository.UtenteRepository;
 import app.entity.Utente;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -20,6 +22,8 @@ public class Application {
 
     @Autowired
     private UtenteRepository utenteRepository;
+
+    private ModelMapper mapper;
 
     @PostConstruct
     public void init(){
@@ -66,4 +70,15 @@ public class Application {
 //        };
 //    }
 
+
+
+//    @Bean
+//    public ModelMapper getMapper() {
+//        return mapper;
+//    }
+//
+//    @Bean
+//    public BCryptPasswordEncoder getPasswordEncoder() {
+//        return passwordEncoder;
+//    }
 }
