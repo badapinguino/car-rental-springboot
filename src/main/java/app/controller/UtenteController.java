@@ -17,12 +17,12 @@ public class UtenteController {
     }
 
     @GetMapping
-    @RequestMapping("/utenti")
+    @RequestMapping("/api/utenti")
     public List selezionaTuttiUtenti(){
         return utentiService.selezionaTuttiUtenti();
     }
 
-    @RequestMapping("/utenti/{id}")
+    @RequestMapping("/api/utenti/{id}")
     @GetMapping
     public Utente selezionaUtenteById(@PathVariable String id) {
         return utentiService.selezionaUtenteById(id);
@@ -38,12 +38,12 @@ public class UtenteController {
     // TODO: meglio inserire un DTO se no ogni volta che devo modificare un utente mi viene sprecato un id nel DB,
     //  perché viene assegnato all'utente temporaneo che poi viene sostituito
     //  con quello dell'utente da modificare presente nel DB
-    @RequestMapping(path = "/utenti", method = RequestMethod.POST)
+    @RequestMapping(path = "/api/utenti", method = RequestMethod.POST)
     public Utente creaModificaUtente(@RequestBody UtenteDTO utenteDTO) {
         return utentiService.creaModificaUtente(utenteDTO);
     }
 
-    @RequestMapping(value = "/utenti/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/api/utenti/{id}", method = RequestMethod.DELETE)
 //    @DeleteMapping
     public Utente eliminaUtenteById(@PathVariable String id) {
         return utentiService.eliminaUtenteById(id);
