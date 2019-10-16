@@ -16,4 +16,6 @@ public interface UtenteRepository extends JpaRepository<Utente, Integer>{
 
     Utente save(Utente u);
 
+    void delete(Utente u);
+
 }

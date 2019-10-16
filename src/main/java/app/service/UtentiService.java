@@ -1,42 +1,62 @@
-//package app.service;
-//
-//import app.DAO.UtenteRepository;
-//import app.entity.Utente;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.core.GrantedAuthority;
-//import org.springframework.security.core.authority.SimpleGrantedAuthority;
-//import org.springframework.security.core.userdetails.UserDetails;
-//import org.springframework.security.core.userdetails.UserDetailsService;
-//import org.springframework.security.core.userdetails.UsernameNotFoundException;
-//import org.springframework.stereotype.Service;
-//
-//import java.util.Collections;
-//
-//@Service
-//public class UtentiService implements UserDetailsService {
-//
-//    @Autowired
-//    private UtenteRepository utenteRepository;
-////    public UtentiService(UtenteRepository utenteRepository){
-////        this.utenteRepository = utenteRepository;
-////    }
-//
-//    @Override
-//    public UserDetails loadUserByUsername(String codiceFiscale) throws UsernameNotFoundException {
-//        Utente user = utenteRepository.findByCodiceFiscale(codiceFiscale);
-//        if (user == null){
-//            throw new UsernameNotFoundException("Codice fiscale o password non valide.");
-//        }
-//        return new org.springframework.security.core.userdetails.User(user.getCodiceFiscale(),
-//                user.getPassword(),
-//                Collections.singleton(new SimpleGrantedAuthority("user")));
-////                mapRolesToAuthorities(user.getRoles()));
-//    }
-//
-////    private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles){
-////        return roles.stream()
-////                .map(role -> new SimpleGrantedAuthority(role.getName()))
-////                .collect(Collectors.toList());
-////
-////    }
-//}
+package app.service;
+
+import app.entity.Utente;
+import app.repository.UtenteRepository;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+import java.util.List;
+
+@Service
+public class UtentiService {
+
+    private UtenteRepository utenteRepository;
+    private BCryptPasswordEncoder passwordEncoder;
+
+    public UtentiService(UtenteRepository utenteRepository, BCryptPasswordEncoder passwordEncoder){
+        this.utenteRepository = utenteRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    public List selezionaTuttiUtenti(){
+        return utenteRepository.findAll();
+    }
+
+    public Utente selezionaUtenteById(String id) {
+        if(StringUtils.isNumeric(id)){ // checks if is a string made by only digits
+            return utenteRepository.findById(Integer.parseInt(id));
+        }else{
+            return utenteRepository.findByCodiceFiscale(id);
+        }
+    }
+
+    public Utente selezionaUtenteByCF(String codiceFiscale) {
+        return utenteRepository.findByCodiceFiscale(codiceFiscale);
+    }
+
+    @Transactional
+    public Utente creaUtente(Utente utente) {
+        // codifico la password che mi arriva dal frontend in chiaro (e non so quanto vada bene)
+        utente.setPassword(passwordEncoder.encode(utente.getPassword()));
+        return utenteRepository.save(utente);
+    }
+
+    @Transactional
+    public Utente creaModificaUtente(Utente utente) {
+        Utente u = selezionaUtenteByCF(utente.getCodiceFiscale());
+        if (u != null && u.getNome() != null && u.getId() > 0) {
+            utente.setId(u.getId());
+        }
+        return creaUtente(utente);
+    }
+
+    @Transactional
+    public Utente eliminaUtenteById(String id){
+        Utente utenteEliminato = selezionaUtenteById(id);
+        utenteRepository.delete(utenteEliminato);
+        return utenteEliminato;
+    }
+
+}
