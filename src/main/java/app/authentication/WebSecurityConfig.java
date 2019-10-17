@@ -1,5 +1,6 @@
 package app.authentication;
 
+import net.bytebuddy.implementation.bytecode.collection.ArrayAccess;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -17,10 +18,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.session.SessionManagementFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
 
 import java.util.Arrays;
 
@@ -46,9 +47,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public JwtAuthenticationTokenFilter authenticationTokenFilterBean() throws Exception {
         return new JwtAuthenticationTokenFilter();
     }
+
+    CorsFilter corsFilter() {
+        CorsFilter filter = new CorsFilter();
+        return filter;
+    }
+
+
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
+                .addFilterBefore(corsFilter(), SessionManagementFilter.class) //adds your custom CorsFilter
                 .cors().and()
                 .csrf().disable()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
@@ -80,13 +89,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
-        configuration.setAllowedMethods(Arrays.asList("GET","POST","DELETE","UPDATE","OPTIONS"));
+        final CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(Arrays.asList("*"));
+        configuration.setAllowedMethods(Arrays.asList("HEAD",
+                "GET", "POST", "PUT", "DELETE", "PATCH"));
+        // setAllowCredentials(true) is important, otherwise:
+        // The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when the request's credentials mode is 'include'.
         configuration.setAllowCredentials(true);
-        configuration.addAllowedHeader("Authorization");
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**",configuration);
+        // setAllowedHeaders is important! Without it, OPTIONS preflight request
+        // will fail with 403 Invalid CORS request
+        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
+        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+
         return source;
     }
 

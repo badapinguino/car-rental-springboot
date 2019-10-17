@@ -13,15 +13,13 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.security.authentication.AuthenticationManager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class AuthenticationRestController {
     @Value("${jwt.header}")
@@ -34,6 +32,7 @@ public class AuthenticationRestController {
     @Autowired
     private JwtUserDetailsServiceImpl userDetailsService; // al posto di UserDetailsService
 
+//    @CrossOrigin
     @RequestMapping(value = "login", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest, /*Device device,*/ HttpServletResponse response) throws AuthenticationException, JsonProcessingException {
         // Effettuo l autenticazione
@@ -51,6 +50,8 @@ public class AuthenticationRestController {
         // Ritorno il token
         return ResponseEntity.ok(new JwtAuthenticationResponse(userDetails.getUsername(),userDetails.getAuthorities(), token));
     }
+
+//    @CrossOrigin
     @RequestMapping(value = "protected/refresh-token", method = RequestMethod.GET)
     public ResponseEntity<?> refreshAndGetAuthenticationToken(HttpServletRequest request, HttpServletResponse response) {
         String token = request.getHeader(tokenHeader);
