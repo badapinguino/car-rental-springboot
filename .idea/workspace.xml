@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +95,7 @@
       <workItem from="1571122650883" duration="25262000" />
       <workItem from="1571209948290" duration="16857000" />
       <workItem from="1571241798891" duration="41000" />
-      <workItem from="1571296014509" duration="8595000" />
+      <workItem from="1571296014509" duration="8757000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -205,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571230947280</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added a select id and password API, but it doesn't work. There is a problem with the password encrypting, two password encrypted with the same algorithm results in a different hash.&#10;&#10;Solved the CORS problem with a Bean in WebSecurityConfig.java">
+      <created>1571307460470</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1571307460470</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +244,8 @@
     <MESSAGE value="Created UtenteService. Modified UtenteController in a way where Service is called, and not directly UtenteRepository. I've done the APIs for the user saveOrUpdate and delete" />
     <MESSAGE value="UtenteDTO created and used in Controller and Service." />
     <MESSAGE value="Added /api/ to the path required to call the REST APIs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added /api/ to the path required to call the REST APIs." />
+    <MESSAGE value="Added a select id and password API, but it doesn't work. There is a problem with the password encrypting, two password encrypted with the same algorithm results in a different hash.&#10;&#10;Solved the CORS problem with a Bean in WebSecurityConfig.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a select id and password API, but it doesn't work. There is a problem with the password encrypting, two password encrypted with the same algorithm results in a different hash.&#10;&#10;Solved the CORS problem with a Bean in WebSecurityConfig.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
