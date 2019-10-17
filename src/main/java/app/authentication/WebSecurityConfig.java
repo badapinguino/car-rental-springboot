@@ -1,8 +1,11 @@
 package app.authentication;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -14,6 +17,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
+
+import java.util.Arrays;
 
 @Configuration
 @EnableWebSecurity
@@ -40,11 +49,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
+                .cors().and()
                 .csrf().disable()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 // non abbiamo bisogno di una sessione
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .cors().and()
                 .authorizeRequests()
                 .antMatchers(
                         //HttpMethod.GET,
@@ -67,4 +76,37 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public AuthenticationManager customAuthenticationManager() throws Exception {
         return authenticationManager();
     }
+
+
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+        configuration.setAllowedMethods(Arrays.asList("GET","POST","DELETE","UPDATE","OPTIONS"));
+        configuration.setAllowCredentials(true);
+        configuration.addAllowedHeader("Authorization");
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**",configuration);
+        return source;
+    }
+
+//    @Bean
+//    CorsConfigurationSource corsConfigurationSource() {
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+//        return source;
+//    }
+
+//    @Bean
+//    FilterRegistrationBean<CorsFilter> corsFilter(CorsConfigurationSource
+//                                                          corsConfigurationSource)
+//    {
+//        CorsFilter corsFilter = new CorsFilter(corsConfigurationSource);
+//
+//        FilterRegistrationBean<CorsFilter> bean = new FilterRegistrationBean<>
+//                ();
+//        bean.setFilter(corsFilter);
+//        bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
+//        return bean;
+//    }
 }

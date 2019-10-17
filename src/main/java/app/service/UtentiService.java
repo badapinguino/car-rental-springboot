@@ -65,4 +65,14 @@ public class UtentiService {
         return utenteEliminato;
     }
 
+    // TODO: non funziona, la password criptata risulta diversa da quella dell'utente e non so perché
+    public Utente selezionaUtenteIdPassword(String id, String password) {
+        Utente u = selezionaUtenteById(id);
+        String passwordCriptata = passwordEncoder.encode(password);
+        if(u != null && u.getPassword().equals(passwordCriptata)){
+            return u;
+        }else{
+            return null;
+        }
+    }
 }

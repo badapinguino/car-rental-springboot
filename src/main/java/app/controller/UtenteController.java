@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 public class UtenteController {
 
@@ -47,6 +48,11 @@ public class UtenteController {
 //    @DeleteMapping
     public Utente eliminaUtenteById(@PathVariable String id) {
         return utentiService.eliminaUtenteById(id);
+    }
+
+    @RequestMapping(value = "/api/utenti/{id}/{password}", method = RequestMethod.GET)
+    public Utente selezionaUtenteIdPassword(@PathVariable("id") String id, @PathVariable("password") String password){
+        return utentiService.selezionaUtenteIdPassword(id, password);
     }
 
 
