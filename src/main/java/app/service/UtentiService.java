@@ -42,6 +42,8 @@ public class UtentiService {
 
     @Transactional
     public Utente creaUtente(UtenteDTO utenteDTO) {
+        System.out.println(utenteDTO);
+        System.out.println(utenteDTO.getPassword());
         // codifico la password che mi arriva dal frontend in chiaro (e non so quanto vada bene)
         utenteDTO.setPassword(passwordEncoder.encode(utenteDTO.getPassword()));
         //mappare con map utenteDTO su utente
