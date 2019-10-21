@@ -32,9 +32,6 @@ public class Prenotazione implements Serializable {
     @Column(name="approvata", nullable = false)
     private boolean approvata;
 
-    @OneToMany(mappedBy = "prenotazione", cascade=CascadeType.REMOVE)
-    private Set<Multa> multe;
-
     @NotNull
     @ManyToOne
     @JoinColumn(name="id_veicolo", nullable = false)
@@ -44,10 +41,6 @@ public class Prenotazione implements Serializable {
     @ManyToOne
     @JoinColumn(name="id_utente", nullable = false)
     private Utente utente;
-
-    @ManyToOne
-    @JoinColumn(name="id_buono_sconto", nullable = true)
-    private BuonoSconto buonoSconto;
 
     public int getId() {
         return id;
@@ -73,14 +66,6 @@ public class Prenotazione implements Serializable {
         this.dataFine = dataFine;
     }
 
-    public Set<Multa> getMulte() {
-        return multe;
-    }
-
-    public void setMulte(Set<Multa> multe) {
-        this.multe = multe;
-    }
-
     public Veicolo getVeicolo() {
         return veicolo;
     }
@@ -95,14 +80,6 @@ public class Prenotazione implements Serializable {
 
     public void setUtente(Utente utente) {
         this.utente = utente;
-    }
-
-    public BuonoSconto getBuonoSconto() {
-        return buonoSconto;
-    }
-
-    public void setBuonoSconto(BuonoSconto buonoSconto) {
-        this.buonoSconto = buonoSconto;
     }
 
     public boolean isApprovata() {
