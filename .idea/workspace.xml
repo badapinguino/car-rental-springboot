@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="">
+    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="Deleted entities Multa and BuonoSconto.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/DTO/VeicoloDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/VeicoloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/repository/VeicoloRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/service/VeicoliService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Prenotazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Prenotazione.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +105,7 @@
       <workItem from="1571323735343" duration="4085000" />
       <workItem from="1571381903123" duration="2526000" />
       <workItem from="1571390702659" duration="9708000" />
-      <workItem from="1571643082625" duration="2497000" />
+      <workItem from="1571643082625" duration="8489000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -237,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571414010067</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Deleted entities Multa and BuonoSconto.">
+      <created>1571658920678</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1571658920678</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +286,8 @@
     <MESSAGE value="Removed a TODO" />
     <MESSAGE value="Problema CORS che si è ripresentato. Ora risolto." />
     <MESSAGE value="Minor changes. Added X-Auth as an allowed Header in WebSecurityConfig." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes. Added X-Auth as an allowed Header in WebSecurityConfig." />
+    <MESSAGE value="Deleted entities Multa and BuonoSconto." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted entities Multa and BuonoSconto." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
