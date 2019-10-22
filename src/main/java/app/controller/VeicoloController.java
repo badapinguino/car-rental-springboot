@@ -28,12 +28,12 @@ public class VeicoloController {
         return veicoliService.selezionaVeicolo(id);
     }
 
-    @RequestMapping(path = "/api/utenti", method = RequestMethod.POST)
-    public Veicolo creaModificaUtente(@RequestBody VeicoloDTO veicoloDTO) {
+    @RequestMapping(path = "/api/veicoli", method = RequestMethod.POST)
+    public Veicolo creaModificaVeicolo(@RequestBody VeicoloDTO veicoloDTO) {
         return veicoliService.creaModificaVeicolo(veicoloDTO);
     }
 
-    @RequestMapping(value = "/api/utenti/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/api/veicoli/{id}", method = RequestMethod.DELETE)
     public Veicolo eliminaVeicoloById(@PathVariable String id) {
         return veicoliService.eliminaVeicoloById(id);
     }

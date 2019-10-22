@@ -45,7 +45,7 @@ public class VeicoliService {
     @Transactional
     public Veicolo creaVeicolo(VeicoloDTO veicoloDTO) {
         System.out.println(veicoloDTO);
-        //mappare con map utenteDTO su utente
+        //mappare con map veicoloDTO su veicolo
         Veicolo veicolo = mapper.map(veicoloDTO, Veicolo.class);
         return veicoloRepository.save(veicolo);
     }

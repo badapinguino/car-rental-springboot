@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/DTO/VeicoloDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DTO/VeicoloDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/VeicoloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/VeicoloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/repository/VeicoloRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repository/VeicoloRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/service/VeicoliService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/VeicoliService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -106,7 +104,7 @@
       <workItem from="1571381903123" duration="2526000" />
       <workItem from="1571390702659" duration="9708000" />
       <workItem from="1571643082625" duration="8605000" />
-      <workItem from="1571727637596" duration="3040000" />
+      <workItem from="1571727637596" duration="3484000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -255,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571673193400</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Created all REST APIs for Veicolo.">
+      <created>1571731682520</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1571731682520</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +301,8 @@
     <MESSAGE value="Minor changes. Added X-Auth as an allowed Header in WebSecurityConfig." />
     <MESSAGE value="Deleted entities Multa and BuonoSconto." />
     <MESSAGE value="Created VeicoloDTO, repository, controller and service. They are not finished yet." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created VeicoloDTO, repository, controller and service. They are not finished yet." />
+    <MESSAGE value="Created all REST APIs for Veicolo." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created all REST APIs for Veicolo." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
