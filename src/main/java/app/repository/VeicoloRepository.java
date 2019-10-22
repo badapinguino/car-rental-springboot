@@ -18,5 +18,5 @@ public interface VeicoloRepository extends JpaRepository<Veicolo, Integer> {
 
     Veicolo save(Veicolo veicolo);
 
-    Veicolo deleteByCodiceMezzo(String codiceMezzo); // controllare se funziona il Veicolo come return
+    void delete(Veicolo veicolo); // controllare se funziona il Veicolo come return
 }

@@ -1,10 +1,9 @@
 package app.controller;
 
+import app.DTO.VeicoloDTO;
+import app.entity.Veicolo;
 import app.service.VeicoliService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +21,21 @@ public class VeicoloController {
     @RequestMapping("/api/veicoli")
     public List selezionaTuttiVeicoli(){
         return veicoliService.selezionaTuttiVeicoli();
+    }
+
+    @RequestMapping(value = "/api/veicoli/{id}", method = RequestMethod.GET)
+    public Veicolo selezionaVeicolo(@PathVariable String id){
+        return veicoliService.selezionaVeicolo(id);
+    }
+
+    @RequestMapping(path = "/api/utenti", method = RequestMethod.POST)
+    public Veicolo creaModificaUtente(@RequestBody VeicoloDTO veicoloDTO) {
+        return veicoliService.creaModificaVeicolo(veicoloDTO);
+    }
+
+    @RequestMapping(value = "/api/utenti/{id}", method = RequestMethod.DELETE)
+    public Veicolo eliminaVeicoloById(@PathVariable String id) {
+        return veicoliService.eliminaVeicoloById(id);
     }
 
 }
