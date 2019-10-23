@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/DTO/PrenotazioneDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/PrenotazioneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/repository/PrenotazioneRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/service/PrenotazioniService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/VeicoloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/VeicoloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/service/VeicoliService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/VeicoliService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +44,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../car-rental-springMVC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -104,7 +106,10 @@
       <workItem from="1571381903123" duration="2526000" />
       <workItem from="1571390702659" duration="9708000" />
       <workItem from="1571643082625" duration="8605000" />
-      <workItem from="1571727637596" duration="3484000" />
+      <workItem from="1571727637596" duration="4106000" />
+      <workItem from="1571747414514" duration="3310000" />
+      <workItem from="1571814085763" duration="606000" />
+      <workItem from="1571815671141" duration="8363000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -260,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571731682520</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Minor fixes.">
+      <created>1571732112033</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1571732112033</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +314,8 @@
     <MESSAGE value="Deleted entities Multa and BuonoSconto." />
     <MESSAGE value="Created VeicoloDTO, repository, controller and service. They are not finished yet." />
     <MESSAGE value="Created all REST APIs for Veicolo." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created all REST APIs for Veicolo." />
+    <MESSAGE value="Minor fixes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
