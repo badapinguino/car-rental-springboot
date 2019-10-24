@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Prenotazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Prenotazione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Veicolo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Veicolo.java" afterDir="false" />
-    </list>
+    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +104,7 @@
       <workItem from="1571747414514" duration="3310000" />
       <workItem from="1571814085763" duration="606000" />
       <workItem from="1571815671141" duration="8502000" />
-      <workItem from="1571901632980" duration="10484000" />
+      <workItem from="1571901632980" duration="10607000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -279,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571828029560</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Added @JsonIgnore to Utente and Veicolo (where there are @ManyToOne annotations).">
+      <created>1571931983604</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1571931983604</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +325,8 @@
     <MESSAGE value="Created all REST APIs for Veicolo." />
     <MESSAGE value="Minor fixes." />
     <MESSAGE value="Created Prenotazione REST APIs, it seems working." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Prenotazione REST APIs, it seems working." />
+    <MESSAGE value="Added @JsonIgnore to Utente and Veicolo (where there are @ManyToOne annotations)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added @JsonIgnore to Utente and Veicolo (where there are @ManyToOne annotations)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
