@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/DTO/PrenotazioneDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controller/PrenotazioneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/repository/PrenotazioneRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/service/PrenotazioniService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Prenotazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Prenotazione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Veicolo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Veicolo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +43,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../car-rental-springMVC" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -109,7 +108,8 @@
       <workItem from="1571727637596" duration="4106000" />
       <workItem from="1571747414514" duration="3310000" />
       <workItem from="1571814085763" duration="606000" />
-      <workItem from="1571815671141" duration="8363000" />
+      <workItem from="1571815671141" duration="8502000" />
+      <workItem from="1571901632980" duration="10484000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -272,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571732112033</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Created Prenotazione REST APIs, it seems working.">
+      <created>1571828029560</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1571828029560</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +322,8 @@
     <MESSAGE value="Created VeicoloDTO, repository, controller and service. They are not finished yet." />
     <MESSAGE value="Created all REST APIs for Veicolo." />
     <MESSAGE value="Minor fixes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes." />
+    <MESSAGE value="Created Prenotazione REST APIs, it seems working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Prenotazione REST APIs, it seems working." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -2,6 +2,8 @@ package app.entity;
 
 //import app.exceptions.veicolo.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
@@ -77,6 +79,7 @@ public class Veicolo implements Serializable {
     @Column(name="prezzo_giornata", nullable = false)
     private float prezzoGiornata;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "veicolo", cascade=CascadeType.REMOVE)
     private Set<Prenotazione> prenotazioni;
 

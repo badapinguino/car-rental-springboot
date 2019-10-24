@@ -1,6 +1,7 @@
 package app.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -66,6 +67,7 @@ public class Utente implements Serializable {
     @Column(name = "immagine")
     private String immagine;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "utente", cascade=CascadeType.REMOVE)
     private Set<Prenotazione> prenotazioni;
 
