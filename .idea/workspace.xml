@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="" />
+    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/error/exception/DataInizioDopoDataFineException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/error/exception/ModificaPrenotazionePrimaNGiorniException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/error/exception/PrenotazioneNelPassatoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/error/exception/VeicoloNonDisponibileDateSelezionateException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/error/toBeDeleted" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Prenotazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Prenotazione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/repository/PrenotazioneRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repository/PrenotazioneRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/repository/VeicoloRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repository/VeicoloRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/service/PrenotazioniService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/PrenotazioniService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -43,6 +56,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="app.error.exception" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -104,7 +122,8 @@
       <workItem from="1571747414514" duration="3310000" />
       <workItem from="1571814085763" duration="606000" />
       <workItem from="1571815671141" duration="8502000" />
-      <workItem from="1571901632980" duration="10607000" />
+      <workItem from="1571901632980" duration="11250000" />
+      <workItem from="1571986956008" duration="14305000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -281,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571931983604</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="*Added @JsonIgnore to Utente and Veicolo (where there are @OneToMany annotations, not many to one).">
+      <created>1571932048702</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1571932048702</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +327,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commit .ida/vcs.xml and .idea/workspace.xml" />
     <MESSAGE value="Application.java created. That's the entry point (main)." />
     <MESSAGE value="Hello controller added. It's a controller just to try if it works. Will be eliminated." />
     <MESSAGE value="Hello controller commented." />
@@ -326,7 +351,8 @@
     <MESSAGE value="Minor fixes." />
     <MESSAGE value="Created Prenotazione REST APIs, it seems working." />
     <MESSAGE value="Added @JsonIgnore to Utente and Veicolo (where there are @ManyToOne annotations)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added @JsonIgnore to Utente and Veicolo (where there are @ManyToOne annotations)." />
+    <MESSAGE value="*Added @JsonIgnore to Utente and Veicolo (where there are @OneToMany annotations, not many to one)." />
+    <option name="LAST_COMMIT_MESSAGE" value="*Added @JsonIgnore to Utente and Veicolo (where there are @OneToMany annotations, not many to one)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -343,12 +369,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/app/service/UtentiService.java</url>
-          <line>71</line>
+          <line>76</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/app/service/UtentiService.java</url>
-          <line>73</line>
+          <line>78</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>

@@ -30,7 +30,12 @@ public class UtentiService {
 
     public Utente selezionaUtenteById(String id) {
         if(StringUtils.isNumeric(id)){ // checks if is a string made by only digits
-            return utenteRepository.findById(Integer.parseInt(id));
+            try {
+                return utenteRepository.findById(Integer.parseInt(id));
+            }catch (NumberFormatException nfe){
+                // se è un numero che da eccezione probabilmente è lungo 16 caratteri ed è la stringa del codice fiscale
+                return utenteRepository.findByCodiceFiscale(id);
+            }
         }else{
             return utenteRepository.findByCodiceFiscale(id);
         }

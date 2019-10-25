@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -20,12 +22,14 @@ public class Prenotazione implements Serializable {
 
     @NotNull
     @DateTimeFormat(pattern="yyyy-MM-dd")
+    @Future
     //mettere anche controllo @Future? in teoria un domani quel futuro potrebbe essere passato, in quel caso come si comporterebbe?
     @Column(name="data_inizio", nullable = false)
     private LocalDate dataInizio;
 
     @NotNull
     @DateTimeFormat(pattern="yyyy-MM-dd")
+    @Future
     @Column(name="data_fine", nullable = false)
     private LocalDate dataFine;
 
