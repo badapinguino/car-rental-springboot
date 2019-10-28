@@ -9,6 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -58,6 +59,21 @@ public class UtentiService {
 
     @Transactional
     public Utente creaModificaUtente(UtenteDTO utenteDTO) {
+        if(utenteDTO.getCodiceFiscale().length()>Utente.getLunghezzaCampoCodiceFiscale()){
+            throw new RuntimeException("Il codice fiscale non può essere più lungo di " +
+                    Utente.getLunghezzaCampoCodiceFiscale() + " caratteri.");
+        }else if(utenteDTO.getNome().length()>Utente.getLunghezzaCampoNome()){
+            throw new RuntimeException("Il nome non può essere più lungo di " +
+                    Utente.getLunghezzaCampoNome() + " caratteri.");
+        }else if(utenteDTO.getCognome().length()>Utente.getLunghezzaCampoCognome()){
+            throw new RuntimeException("Il cognome non può essere più lungo di " +
+                    Utente.getLunghezzaCampoCognome() + " caratteri.");
+        }else if(utenteDTO.getDataNascita().compareTo(LocalDate.parse("1900-01-01")) < 0){
+            throw new RuntimeException("La data di nascita non può essere antecedente al 1900.");
+        }else if(utenteDTO.getDataNascita().compareTo(LocalDate.now()) > 0){
+            throw new RuntimeException("La data di nascita non può essere futura.");
+        }
+
         Utente u = selezionaUtenteByCF(utenteDTO.getCodiceFiscale());
         if (u != null && u.getNome() != null && u.getId() > 0) {
             utenteDTO.setId(u.getId());

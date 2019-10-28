@@ -60,7 +60,6 @@ public class PrenotazioniService {
     @Transactional
     public Prenotazione creaPrenotazione(PrenotazioneDTO prenotazioneDTO) {
         Prenotazione prenotazione;
-        // TODO: aggiungere controllo disponibilità veicolo
         if( (prenotazioneDTO.getDataInizio().compareTo(LocalDate.now())<=0) ||
                 (prenotazioneDTO.getDataFine().compareTo(LocalDate.now())<=0) ){
             throw new PrenotazioneNelPassatoException();
