@@ -1,13 +1,10 @@
 package app.entity;
 
-//import app.exceptions.veicolo.*;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
-import java.util.Calendar;
 import java.util.Objects;
 import java.util.Set;
 
@@ -127,15 +124,6 @@ public class Veicolo implements Serializable {
         return anno;
     }
 
-    //si può impostare un anno come l'anno prossimo, pensando alla fine dell'anno, nella quale magari un dipendente vuole cominciare ad inserire un auto che verrà immatricolata l'anno dopo
-//    public void setAnno(int anno) throws AnnoFuturoException {
-//        if(anno<=Calendar.getInstance().get(Calendar.YEAR)+1){
-//            this.anno = anno;
-//        }else{
-//            throw new AnnoFuturoException();
-//        }
-//    }
-    // TODO: mettere l'eccezione anno futuro e togliere i commenti alle righe sopra, e anche all'import
     public void setAnno(int anno){
         this.anno = anno;
     }

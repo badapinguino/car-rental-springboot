@@ -3,41 +3,21 @@ package app.DTO;
 import app.entity.Prenotazione;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.Set;
 
 public class UtenteDTO {
-    private static final int lunghezzaCampoCognome = 80;
-    private static final int lunghezzaCampoNome = 80;
-    private static final int lunghezzaCampoCodiceFiscale = 16;
-
-    public static int getLunghezzaCampoCodiceFiscale(){
-        return lunghezzaCampoCodiceFiscale;
-    }
-    public static int getLunghezzaCampoCognome(){
-        return lunghezzaCampoCognome;
-    }
-    public static int getLunghezzaCampoNome(){
-        return lunghezzaCampoNome;
-    }
 
     private int id;
 
-    @Size(min=lunghezzaCampoCodiceFiscale, max = lunghezzaCampoCodiceFiscale)
     private String codiceFiscale;
 
-    @Size(max = lunghezzaCampoCognome)
     private String cognome;
 
-    @Size(max = lunghezzaCampoNome)
     private String nome;
 
-    @Past
-    @DateTimeFormat(pattern="yyyy-MM-dd") //controllare se va bene così "dd/MM/yyyy"
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     private LocalDate dataNascita;
 
     private boolean superuser;

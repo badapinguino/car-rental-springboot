@@ -18,7 +18,7 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
     public void commence(HttpServletRequest request,
                          HttpServletResponse response,
                          AuthenticationException authException) throws IOException {
-        // Questo metodo e' invocato quando un utente tenta di accedere ad un endpoint nn pubblico senza credenziali corrette
+        // Questo metodo e' invocato quando un utente tenta di accedere ad un endpoint non pubblico senza credenziali corrette
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
     }
 }

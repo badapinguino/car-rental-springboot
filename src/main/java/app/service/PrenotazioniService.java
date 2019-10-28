@@ -23,7 +23,6 @@ public class PrenotazioniService {
     private final UtentiService utentiService;
     private PrenotazioneRepository prenotazioneRepository;
     private ModelMapper mapper;
-    private VeicoliService veicoliService;
 
     public PrenotazioniService(PrenotazioneRepository prenotazioneRepository, UtentiService utentiService){
         this.prenotazioneRepository = prenotazioneRepository;
@@ -35,8 +34,6 @@ public class PrenotazioniService {
         return prenotazioneRepository.findAll();
     }
 
-
-    //TODO: Richiamare separatamente queste due a seconda se numero o no all'interno del controller
     public Prenotazione selezionaPrenotazione(int id) {
         return prenotazioneRepository.findById(id);
     }
@@ -78,8 +75,9 @@ public class PrenotazioniService {
         List<Prenotazione> prenotazioniVeicolo = selezionaPrenotazioniByCodiceMezzo(prenotazioneDTO.getVeicolo().getId());
         boolean controlloNelMezzo = false;
         for (Prenotazione p : prenotazioniVeicolo ) {
-            if( p.getId()!=prenotazioneDTO.getId() && (((p.getDataInizio()).compareTo(prenotazioneDTO.getDataInizio()) >= 0 && p.getDataInizio().compareTo(prenotazioneDTO.getDataFine()) <= 0) || (p.getDataFine().compareTo(prenotazioneDTO.getDataInizio()) >= 0 && p.getDataFine().compareTo(prenotazioneDTO.getDataFine()) <= 0))){
+            if (p.getId() != prenotazioneDTO.getId() && (((p.getDataInizio()).compareTo(prenotazioneDTO.getDataInizio()) >= 0 && p.getDataInizio().compareTo(prenotazioneDTO.getDataFine()) <= 0) || (p.getDataFine().compareTo(prenotazioneDTO.getDataInizio()) >= 0 && p.getDataFine().compareTo(prenotazioneDTO.getDataFine()) <= 0))) {
                 controlloNelMezzo = true;
+                break;
             }
         }
         if( !controlloDataInizio && !controlloDataFine && !controlloNelMezzo){
@@ -107,11 +105,7 @@ public class PrenotazioniService {
     public boolean esistePrenotazioneDataVeicolo(LocalDate dataSelezionata, Veicolo veicolo, int numeroPrenotazione){
         Prenotazione prenotazione = null;
             prenotazione = prenotazioneRepository.getPrenotazioneDataVeicolo(veicolo.getId(), dataSelezionata);
-        if(prenotazione==null || prenotazione.getId() == numeroPrenotazione){
-            return false;
-        }else{
-            return true;
-        }
+        return prenotazione != null && prenotazione.getId() != numeroPrenotazione;
     }
 
     @Transactional

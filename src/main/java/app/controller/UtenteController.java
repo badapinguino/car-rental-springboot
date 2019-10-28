@@ -29,11 +29,6 @@ public class UtenteController {
         return utentiService.selezionaUtenteById(id);
     }
 
-//    @RequestMapping(path = "/utenti", method = RequestMethod.GET)
-//    public Utente selezionaUtentiByCF(@RequestParam String codiceFiscale) {
-//        return utentiService.selezionaUtenteByCF(codiceFiscale);
-//    }
-
 
     // Qui però viene passata la password tra client e server in chiaro. Non è l'ideale
     // Meglio inserire un DTO se no ogni volta che devo modificare un utente mi viene sprecato un id nel DB,
@@ -49,28 +44,5 @@ public class UtenteController {
     public Utente eliminaUtenteById(@PathVariable String id) {
         return utentiService.eliminaUtenteById(id);
     }
-
-    @RequestMapping(value = "/api/utenti/{id}/{password}", method = RequestMethod.GET)
-    public Utente selezionaUtenteIdPassword(@PathVariable("id") String id, @PathVariable("password") String password){
-        return utentiService.selezionaUtenteIdPassword(id, password);
-    }
-
-
-
-
-//    @PutMapping("/{id}")
-//    public Contact update(@PathVariable("id") long id, @RequestBody Contact contact) {
-//        return contactService.update(id, contact);
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public void delete(@PathVariable("id") long id) {
-//        contactService.delete(id);
-//    }
-
-//    @RequestMapping(path = "/mno/objectKey/{id}/{name}", method = RequestMethod.GET)
-//    public Book getBook(@PathVariable int id, @PathVariable String name) {
-//        // code here
-//    }
 
 }

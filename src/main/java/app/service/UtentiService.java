@@ -48,8 +48,6 @@ public class UtentiService {
 
     @Transactional
     public Utente creaUtente(UtenteDTO utenteDTO) {
-        System.out.println(utenteDTO);
-        System.out.println(utenteDTO.getPassword());
         // codifico la password che mi arriva dal frontend in chiaro (e non so quanto vada bene)
         utenteDTO.setPassword(passwordEncoder.encode(utenteDTO.getPassword()));
         //mappare con map utenteDTO su utente
@@ -59,8 +57,8 @@ public class UtentiService {
 
     @Transactional
     public Utente creaModificaUtente(UtenteDTO utenteDTO) {
-        if(utenteDTO.getCodiceFiscale().length()>Utente.getLunghezzaCampoCodiceFiscale()){
-            throw new RuntimeException("Il codice fiscale non può essere più lungo di " +
+        if(utenteDTO.getCodiceFiscale().length()!=Utente.getLunghezzaCampoCodiceFiscale()){
+            throw new RuntimeException("Il codice fiscale deve essere lungo " +
                     Utente.getLunghezzaCampoCodiceFiscale() + " caratteri.");
         }else if(utenteDTO.getNome().length()>Utente.getLunghezzaCampoNome()){
             throw new RuntimeException("Il nome non può essere più lungo di " +
@@ -86,16 +84,5 @@ public class UtentiService {
         Utente utenteEliminato = selezionaUtenteById(id);
         utenteRepository.delete(utenteEliminato);
         return utenteEliminato;
-    }
-
-    // TODO: non funziona, la password criptata risulta diversa da quella dell'utente e non so perché
-    public Utente selezionaUtenteIdPassword(String id, String password) {
-        Utente u = selezionaUtenteById(id);
-        String passwordCriptata = passwordEncoder.encode(password);
-        if(u != null && u.getPassword().equals(passwordCriptata)){
-            return u;
-        }else{
-            return null;
-        }
     }
 }

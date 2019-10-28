@@ -6,7 +6,6 @@ import app.service.PrenotazioniService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class PrenotazioneController {
@@ -17,21 +16,10 @@ public class PrenotazioneController {
         this.prenotazioniService = prenotazioniService;
     }
 
-//    @GetMapping
-//    @RequestMapping("/api/prenotazioni")
-//    public List selezionaTuttePrenotazioni(){
-//        return prenotazioniService.selezionaTuttePrenotazioni();
-//    }
-
     @RequestMapping(value = "/api/prenotazioni/{id}", method = RequestMethod.GET)
     public Prenotazione selezionaPrenotazione(@PathVariable int id){
         return prenotazioniService.selezionaPrenotazione(id);
     }
-
-//    @RequestMapping(value = "/api/prenotazioni/{codiceFiscale}", method = RequestMethod.GET)
-//    public List<Prenotazione> selezionaPrenotazioniUtenteCF(@PathVariable String codiceFiscale){
-//        return prenotazioniService.selezionaPrenotazioneCodiceFiscale(codiceFiscale);
-//    }
 
     @RequestMapping(value="/api/prenotazioni", method = RequestMethod.GET)
     public @ResponseBody

@@ -18,12 +18,12 @@ public final class JwtUserFactory {
         return new JwtUser(
                 user.getCodiceFiscale(),
                 user.getPassword(),
-                mapToGrantedAuthorities(/*user.getAuthorities()*/user.isSuperuser()),
+                mapToGrantedAuthorities(user.isSuperuser()),
                 true
         );
     }
 
-    private static List<GrantedAuthority> mapToGrantedAuthorities(/*List<Authority> authorities*/ boolean superuser) {
+    private static List<GrantedAuthority> mapToGrantedAuthorities(boolean superuser) {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
         authorities.add(new SimpleGrantedAuthority("Customer"));
         authorities.add(new SimpleGrantedAuthority("Admin"));

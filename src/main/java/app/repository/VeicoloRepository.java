@@ -20,5 +20,5 @@ public interface VeicoloRepository extends JpaRepository<Veicolo, Integer> {
 
     Veicolo save(Veicolo veicolo);
 
-    void delete(Veicolo veicolo); // controllare se funziona il Veicolo come return
+    void delete(Veicolo veicolo);
 }

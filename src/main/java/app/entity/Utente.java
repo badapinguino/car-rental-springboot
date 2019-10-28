@@ -51,7 +51,7 @@ public class Utente implements Serializable {
 
     @NotNull
     @Past
-    @DateTimeFormat(pattern="yyyy-MM-dd") //controllare se va bene così "dd/MM/yyyy"
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     @Column(name = "data_nascita", nullable = false)
     private LocalDate dataNascita;
 

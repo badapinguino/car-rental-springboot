@@ -6,12 +6,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-import org.springframework.mobile.device.Device;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -29,9 +27,6 @@ public class JwtTokenUtil implements Serializable {
     private static final String CLAIM_KEY_AUTHORITIES = "roles";
     private static final String CLAIM_KEY_IS_ENABLED = "isEnabled";
     private static final String AUDIENCE_UNKNOWN = "unknown";
-//    private static final String AUDIENCE_WEB = "web";
-//    private static final String AUDIENCE_MOBILE = "mobile";
-//    private static final String AUDIENCE_TABLET = "tablet";
     @Value("${jwt.secret}")
     private String secret;
 //    @Autowired
@@ -130,27 +125,10 @@ public class JwtTokenUtil implements Serializable {
         return expiration.before(new Date());
     }
 
-//    private String generateAudience(Device device) {
-//        String audience = AUDIENCE_UNKNOWN;
-//        if (device.isNormal()) {
-//            audience = AUDIENCE_WEB;
-//        } else if (device.isTablet()) {
-//            audience = AUDIENCE_TABLET;
-//        } else if (device.isMobile()) {
-//            audience = AUDIENCE_MOBILE;
-//        }
-//        return audience;
-//    }
 
-//    private Boolean ignoreTokenExpiration(String token) {
-//        String audience = getAudienceFromToken(token);
-//        return (AUDIENCE_TABLET.equals(audience) || AUDIENCE_MOBILE.equals(audience));
-//    }
-
-    public String generateToken(UserDetails userDetails/*, Device device*/) throws JsonProcessingException {
+    public String generateToken(UserDetails userDetails) throws JsonProcessingException {
         Map<String, Object> claims = new HashMap<>();
         claims.put(CLAIM_KEY_USERNAME, userDetails.getUsername());
-//        claims.put(CLAIM_KEY_AUDIENCE, generateAudience(device));
         claims.put(CLAIM_KEY_CREATED, new Date());
         List<String> auth = userDetails.getAuthorities().stream().map(role -> role.getAuthority()).collect(Collectors.toList());
         claims.put(CLAIM_KEY_AUTHORITIES, auth);
@@ -169,7 +147,7 @@ public class JwtTokenUtil implements Serializable {
 
     public Boolean canTokenBeRefreshed(String token) {
         final Date created = getCreatedDateFromToken(token);
-        return (!isTokenExpired(token) /*|| ignoreTokenExpiration(token)*/);
+        return (!isTokenExpired(token));
     }
 
     public String refreshToken(String token) {
