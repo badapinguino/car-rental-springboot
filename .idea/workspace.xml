@@ -4,24 +4,6 @@
     <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/DTO/UtenteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DTO/UtenteDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/DTO/VeicoloDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DTO/VeicoloDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/AuthenticationRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/AuthenticationRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/JwtAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/JwtAuthenticationEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/JwtAuthenticationTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/JwtAuthenticationTokenFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/JwtTokenUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/JwtUserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/JwtUserFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/model/JwtUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/model/JwtUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/PrenotazioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/PrenotazioneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Prenotazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Prenotazione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Veicolo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Veicolo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/repository/VeicoloRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repository/VeicoloRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/service/PrenotazioniService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/PrenotazioniService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +42,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../car-rental-angular" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -134,7 +116,8 @@
       <workItem from="1571901632980" duration="11250000" />
       <workItem from="1571986956008" duration="14658000" />
       <workItem from="1572249160786" duration="5530000" />
-      <workItem from="1572259574936" duration="3677000" />
+      <workItem from="1572259574936" duration="9869000" />
+      <workItem from="1572336274148" duration="696000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -332,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572262784556</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Project finished. Unused comments and parts have been removed.">
+      <created>1572264284787</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1572264284787</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,8 +342,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Hello controller commented." />
-    <MESSAGE value="Added all entities" />
     <MESSAGE value="Created all the Spring security classes. There is still a problem with jdbc dependency to add" />
     <MESSAGE value="Authentication reply with 401 if username and password are incorrect, otherwise it replies with 200 OK. Still to add JWT Token" />
     <MESSAGE value="Added JWT token but it doesn't work" />
@@ -377,7 +365,9 @@
     <MESSAGE value="*Added @JsonIgnore to Utente and Veicolo (where there are @OneToMany annotations, not many to one)." />
     <MESSAGE value="Created some exceptions to do the back-end checks." />
     <MESSAGE value="Project finished." />
-    <option name="LAST_COMMIT_MESSAGE" value="Project finished." />
+    <MESSAGE value="Project finished. Unused comments and parts has been removed." />
+    <MESSAGE value="Project finished. Unused comments and parts have been removed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Project finished. Unused comments and parts have been removed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
