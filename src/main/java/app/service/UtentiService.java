@@ -42,7 +42,7 @@ public class UtentiService {
         }
     }
 
-    public Utente selezionaUtenteByCF(String codiceFiscale) {
+    private Utente selezionaUtenteByCF(String codiceFiscale) {
         return utenteRepository.findByCodiceFiscale(codiceFiscale);
     }
 

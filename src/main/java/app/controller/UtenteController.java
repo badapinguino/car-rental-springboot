@@ -3,8 +3,13 @@ package app.controller;
 import app.DTO.UtenteDTO;
 import app.entity.Utente;
 import app.service.UtentiService;
+import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -12,9 +17,11 @@ import java.util.List;
 public class UtenteController {
 
     private UtentiService utentiService;
+    private ModelMapper mapper;
 
     public UtenteController(UtentiService utentiService) {
         this.utentiService = utentiService;
+        this.mapper = new ModelMapper();
     }
 
     @GetMapping
@@ -43,6 +50,35 @@ public class UtenteController {
 //    @DeleteMapping
     public Utente eliminaUtenteById(@PathVariable String id) {
         return utentiService.eliminaUtenteById(id);
+    }
+
+
+
+//    @RequestMapping(method = RequestMethod.POST,value ="/api/upload", headers=("content-type=image/*"))
+    @PostMapping(value = "/api/upload/{idUtente}")
+    public void postImage(@PathVariable String idUtente, @RequestParam("file") MultipartFile file) throws IOException {
+        System.out.println("received" + file);
+        if(file!=null && file.getSize()>0) {
+            String path = "/images/";
+            String filename = file.getOriginalFilename();
+            System.out.println(path  + filename);
+            File convFile = new File(path  + filename);
+            convFile.createNewFile();
+            FileOutputStream fos = new FileOutputStream(convFile);
+            fos.write(file.getBytes());
+            fos.close();
+            System.out.println(convFile.getName());
+
+            Utente utenteACuiAggiungereImmagine = utentiService.selezionaUtenteById(idUtente);
+            utenteACuiAggiungereImmagine.setImmagine(path + filename);
+            UtenteDTO utenteDTOConImmagineAggiunta = mapper.map(utenteACuiAggiungereImmagine, UtenteDTO.class);
+            utentiService.creaModificaUtente(utenteDTOConImmagineAggiunta);
+
+//            utenteDTO.setImmagine(path + filename);
+        }else{
+//            utenteDTO.setImmagine(vecchioFile);
+            System.out.println("NO FILE");
+        }
     }
 
 }
