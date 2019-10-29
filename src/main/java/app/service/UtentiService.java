@@ -7,8 +7,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -84,5 +89,25 @@ public class UtentiService {
         Utente utenteEliminato = selezionaUtenteById(id);
         utenteRepository.delete(utenteEliminato);
         return utenteEliminato;
+    }
+
+    public void aggiornaImmagineUtente(String idUtente, MultipartFile file) throws IOException {
+        String path = "/images/";
+        String filename = file.getOriginalFilename();
+        System.out.println(path  + filename);
+        File convFile = new File(path  + filename);
+        convFile.createNewFile();
+        FileOutputStream fos = new FileOutputStream(convFile);
+        fos.write(file.getBytes());
+        fos.close();
+        System.out.println(convFile.getName());
+
+        Utente utenteACuiAggiungereImmagine = selezionaUtenteById(idUtente);
+        utenteRepository.updateImageQuery(utenteACuiAggiungereImmagine.getId(), path + filename);
+
+//        Utente utenteACuiAggiungereImmagine = selezionaUtenteById(idUtente);
+//        UtenteDTO utenteDTOConImmagineAggiunta = mapper.map(utenteACuiAggiungereImmagine, UtenteDTO.class);
+//        utenteDTOConImmagineAggiunta.setImmagine(path + filename);
+//            utentiService.creaModificaUtente(utenteDTOConImmagineAggiunta);
     }
 }

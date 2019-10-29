@@ -73,10 +73,12 @@ public class UtenteController {
             fos.close();
             System.out.println(convFile.getName());
 
-            Utente utenteACuiAggiungereImmagine = utentiService.selezionaUtenteById(idUtente);
-            utenteACuiAggiungereImmagine.setImmagine(path + filename);
-            UtenteDTO utenteDTOConImmagineAggiunta = mapper.map(utenteACuiAggiungereImmagine, UtenteDTO.class);
-            utentiService.creaModificaUtente(utenteDTOConImmagineAggiunta);
+            utentiService.aggiornaImmagineUtente(idUtente, file);
+
+//            Utente utenteACuiAggiungereImmagine = utentiService.selezionaUtenteById(idUtente);
+//            UtenteDTO utenteDTOConImmagineAggiunta = mapper.map(utenteACuiAggiungereImmagine, UtenteDTO.class);
+//            utenteDTOConImmagineAggiunta.setImmagine(path + filename);
+//            utentiService.creaModificaUtente(utenteDTOConImmagineAggiunta);
 
 //            utenteDTO.setImmagine(path + filename);
         }else{
