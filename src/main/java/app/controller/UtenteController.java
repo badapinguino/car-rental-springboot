@@ -41,7 +41,7 @@ public class UtenteController {
     }
 
 
-    // Qui però viene passata la password tra client e server in chiaro. Non è l'ideale
+    // Qui però viene passata la password tra client e server in chiaro. Non è l'ideale.
     // Meglio inserire un DTO se no ogni volta che devo modificare un utente mi viene sprecato un id nel DB,
     //  perché viene assegnato all'utente temporaneo che poi viene sostituito
     //  con quello dell'utente da modificare presente nel DB
@@ -58,7 +58,6 @@ public class UtenteController {
 
 
 
-//    @RequestMapping(method = RequestMethod.POST,value ="/api/upload", headers=("content-type=image/*"))
     @PostMapping(value = "/api/upload/{idUtente}")
     public void postImage(@PathVariable String idUtente, @RequestParam("file") MultipartFile file) throws IOException {
         System.out.println("received" + file);
@@ -74,15 +73,7 @@ public class UtenteController {
             System.out.println(convFile.getName());
 
             utentiService.aggiornaImmagineUtente(idUtente, file);
-
-//            Utente utenteACuiAggiungereImmagine = utentiService.selezionaUtenteById(idUtente);
-//            UtenteDTO utenteDTOConImmagineAggiunta = mapper.map(utenteACuiAggiungereImmagine, UtenteDTO.class);
-//            utenteDTOConImmagineAggiunta.setImmagine(path + filename);
-//            utentiService.creaModificaUtente(utenteDTOConImmagineAggiunta);
-
-//            utenteDTO.setImmagine(path + filename);
         }else{
-//            utenteDTO.setImmagine(vecchioFile);
             System.out.println("NO FILE");
         }
     }
@@ -93,8 +84,6 @@ public class UtenteController {
         produces = MediaType.IMAGE_JPEG_VALUE
     )
     public @ResponseBody byte[] getImageWithMediaType(@PathVariable String idUtente) throws IOException {
-//        InputStream in = getClass()
-//                .getResourceAsStream("/com/baeldung/produceimage/image.jpg");
 
         Utente utente = utentiService.selezionaUtenteById(idUtente);
 

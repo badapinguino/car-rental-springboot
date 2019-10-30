@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/repository/UtenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repository/UtenteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +120,11 @@
       <workItem from="1572336274148" duration="10767000" />
       <workItem from="1572366149929" duration="2336000" />
       <workItem from="1572372114328" duration="1097000" />
-      <workItem from="1572384268361" duration="307000" />
+      <workItem from="1572384268361" duration="707000" />
+      <workItem from="1572422473649" duration="224000" />
+      <workItem from="1572422966278" duration="512000" />
+      <workItem from="1572423514027" duration="2078000" />
+      <workItem from="1572427910433" duration="364000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -353,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572368474508</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Update works. Now it should be really finished.">
+      <created>1572384652509</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1572384652509</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +384,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Eliminated authentication.old. It was never used and all commented." />
     <MESSAGE value="Minor changes to Authentication." />
     <MESSAGE value="Added to the project some apis for Utente: gets and post. I should modify the controller to call the service and then the service call the repository. Now the controller calls directly the repository. It works but it's wrong." />
     <MESSAGE value="Created UtenteService. Modified UtenteController in a way where Service is called, and not directly UtenteRepository. I've done the APIs for the user saveOrUpdate and delete" />
@@ -398,7 +408,8 @@
     <MESSAGE value="Utente image upload done." />
     <MESSAGE value="Utente image download done.&#10;Project should be finished." />
     <MESSAGE value="Update doesn't work." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update doesn't work." />
+    <MESSAGE value="Update works. Now it should be really finished." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update works. Now it should be really finished." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
