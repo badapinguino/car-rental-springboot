@@ -24,6 +24,8 @@ public class UtenteDTO {
 
     private String password;
 
+    private String vecchiaPassword;
+
     @Size(max=256)
     private String immagine;
 
@@ -99,5 +101,13 @@ public class UtenteDTO {
 
     public void setPrenotazioni(Set<Prenotazione> prenotazioni) {
         this.prenotazioni = prenotazioni;
+    }
+
+    public String getVecchiaPassword() {
+        return vecchiaPassword;
+    }
+
+    public void setVecchiaPassword(String vecchiaPassword) {
+        this.vecchiaPassword = vecchiaPassword;
     }
 }

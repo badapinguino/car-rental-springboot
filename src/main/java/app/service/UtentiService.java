@@ -79,7 +79,12 @@ public class UtentiService {
 
         Utente u = selezionaUtenteByCF(utenteDTO.getCodiceFiscale());
         if (u != null && u.getNome() != null && u.getId() > 0) {
-            utenteDTO.setId(u.getId());
+            // controllo se password vecchia uguale a nuova
+            if(passwordEncoder.matches(utenteDTO.getVecchiaPassword(), u.getPassword())){
+                utenteDTO.setId(u.getId());
+            }else{
+                throw new RuntimeException("La password precedente inserita non corrisponde alla password dell'utente.");
+            }
         }
         return creaUtente(utenteDTO);
     }
