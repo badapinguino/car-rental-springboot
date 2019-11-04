@@ -24,4 +24,8 @@ public interface UtenteRepository extends JpaRepository<Utente, Integer>{
     @Query("UPDATE Utente SET immagine= ?2 WHERE id= ?1")
     void updateImageQuery(int idUtente, String immagineUrl);
 
+    @Modifying
+    @Query("UPDATE Utente SET verificato=?2 WHERE id= ?1")
+    void updateUtenteVerificato(int idUtente, boolean verificato);
+
 }

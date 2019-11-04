@@ -97,4 +97,9 @@ public class UtenteController {
         return data;
     }
 
+    @GetMapping(value = "/completaIscrizione/{idUtente}")
+    public void confermaIscrizione(@PathVariable String idUtente) {
+        utentiService.aggiornaUtenteVerificato(idUtente, true);
+    }
+
 }

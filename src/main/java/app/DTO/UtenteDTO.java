@@ -29,6 +29,10 @@ public class UtenteDTO {
     @Size(max=256)
     private String immagine;
 
+    private boolean verificato;
+
+    private String email;
+
     private Set<Prenotazione> prenotazioni;
 
     public int getId() {
@@ -93,6 +97,22 @@ public class UtenteDTO {
 
     public void setImmagine(String immagine) {
         this.immagine = immagine;
+    }
+
+    public boolean isVerificato() {
+        return verificato;
+    }
+
+    public void setVerificato(boolean verificato) {
+        this.verificato = verificato;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Set<Prenotazione> getPrenotazioni() {

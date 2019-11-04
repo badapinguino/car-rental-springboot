@@ -67,6 +67,14 @@ public class Utente implements Serializable {
     @Column(name = "immagine")
     private String immagine;
 
+    @NotNull
+    @Column(name = "verificato")
+    private boolean verificato;
+
+    @NotNull
+    @Column(name = "email")
+    private String email;
+
     @JsonIgnore
     @OneToMany(mappedBy = "utente", cascade=CascadeType.REMOVE)
     private Set<Prenotazione> prenotazioni;
@@ -133,6 +141,22 @@ public class Utente implements Serializable {
 
     public void setImmagine(String immagine) {
         this.immagine = immagine;
+    }
+
+    public boolean isVerificato() {
+        return verificato;
+    }
+
+    public void setVerificato(boolean verificato) {
+        this.verificato = verificato;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Set<Prenotazione> getPrenotazioni() {

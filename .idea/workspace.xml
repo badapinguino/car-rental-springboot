@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="Removed some code commented and not used.">
+    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="Added email and verificato fields to Utente and added the manage of the subscription confirmation email">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/email/Mailer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/DTO/UtenteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DTO/UtenteDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/repository/UtenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repository/UtenteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,7 +49,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../car-rental-angular" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -126,7 +132,9 @@
       <workItem from="1572422966278" duration="512000" />
       <workItem from="1572423514027" duration="2078000" />
       <workItem from="1572427910433" duration="4502000" />
-      <workItem from="1572508141303" duration="3964000" />
+      <workItem from="1572508141303" duration="8957000" />
+      <workItem from="1572540904798" duration="90000" />
+      <workItem from="1572854788782" duration="13349000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -373,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572428381388</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Added the old password check on utente modifying.">
+      <created>1572514285954</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1572514285954</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,7 +408,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added to the project some apis for Utente: gets and post. I should modify the controller to call the service and then the service call the repository. Now the controller calls directly the repository. It works but it's wrong." />
     <MESSAGE value="Created UtenteService. Modified UtenteController in a way where Service is called, and not directly UtenteRepository. I've done the APIs for the user saveOrUpdate and delete" />
     <MESSAGE value="UtenteDTO created and used in Controller and Service." />
     <MESSAGE value="Added /api/ to the path required to call the REST APIs." />
@@ -418,7 +432,8 @@
     <MESSAGE value="Update doesn't work." />
     <MESSAGE value="Update works. Now it should be really finished." />
     <MESSAGE value="Removed some code commented and not used." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed some code commented and not used." />
+    <MESSAGE value="Added the old password check on utente modifying." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the old password check on utente modifying." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

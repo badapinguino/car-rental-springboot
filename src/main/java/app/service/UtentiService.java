@@ -1,6 +1,7 @@
 package app.service;
 
 import app.DTO.UtenteDTO;
+import app.email.Mailer;
 import app.entity.Utente;
 import app.repository.UtenteRepository;
 import org.apache.commons.lang3.StringUtils;
@@ -55,6 +56,15 @@ public class UtentiService {
     public Utente creaUtente(UtenteDTO utenteDTO) {
         // codifico la password che mi arriva dal frontend in chiaro (e non so quanto vada bene)
         utenteDTO.setPassword(passwordEncoder.encode(utenteDTO.getPassword()));
+        // controllo se utente è verificato o altrimenti invio mail di conferma
+        if(!utenteDTO.isVerificato()){
+            //invio mail
+            //from,password,to,subject,message
+            Mailer.send("carrental.badapinguino@gmail.com","carrental",utenteDTO.getEmail(),
+                    "Completa la registrazione",
+                    "Per completare l'iscrizione su Car Rental clicca sul link seguente: \n" +
+                            "http://localhost:4200/completaIscrizione?codiceFiscale=" + utenteDTO.getCodiceFiscale());
+        }
         //mappare con map utenteDTO su utente
         Utente utente = mapper.map(utenteDTO, Utente.class);
         return utenteRepository.save(utente);
@@ -96,6 +106,7 @@ public class UtentiService {
         return utenteEliminato;
     }
 
+    @Transactional
     public void aggiornaImmagineUtente(String idUtente, MultipartFile file) throws IOException {
         String path = "/images/";
         String filename = file.getOriginalFilename();
@@ -114,5 +125,11 @@ public class UtentiService {
 //        UtenteDTO utenteDTOConImmagineAggiunta = mapper.map(utenteACuiAggiungereImmagine, UtenteDTO.class);
 //        utenteDTOConImmagineAggiunta.setImmagine(path + filename);
 //            utentiService.creaModificaUtente(utenteDTOConImmagineAggiunta);
+    }
+
+    @Transactional
+    public void aggiornaUtenteVerificato(String idUtente, boolean verificato){
+        Utente utenteDaAggiornareVerificato = selezionaUtenteById(idUtente);
+        utenteRepository.updateUtenteVerificato(utenteDaAggiornareVerificato.getId(), verificato);
     }
 }
