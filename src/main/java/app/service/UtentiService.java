@@ -1,6 +1,7 @@
 package app.service;
 
 import app.DTO.UtenteDTO;
+import app.controller.UtenteController;
 import app.email.Mailer;
 import app.entity.Utente;
 import app.repository.UtenteRepository;
@@ -15,7 +16,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -32,7 +36,15 @@ public class UtentiService {
     }
 
     public List selezionaTuttiUtenti(){
-        return utenteRepository.findAll();
+        List<Utente> listaUtenti = utenteRepository.findAll();
+        List<UtenteDTO> listaUtentiDto = new ArrayList<>();
+        for (Utente utente: listaUtenti) {
+            utente.setPassword(null);
+            UtenteDTO uDTO = new UtenteDTO(utente);
+            // Non ho inserito la password tra i valori ritornati
+            listaUtentiDto.add(uDTO);
+        }
+        return listaUtentiDto;
     }
 
     public Utente selezionaUtenteById(String id) {
@@ -45,6 +57,30 @@ public class UtentiService {
             }
         }else{
             return utenteRepository.findByCodiceFiscale(id);
+        }
+    }
+    public UtenteDTO selezionaUtenteDTOById(String id) {
+        if(StringUtils.isNumeric(id)){ // checks if is a string made by only digits
+            try {
+                Utente utente = utenteRepository.findById(Integer.parseInt(id));
+                // Non inserisco la password tra i valori ritornati
+                utente.setPassword(null);
+                UtenteDTO utenteDTO = new UtenteDTO(utente);
+                return utenteDTO;
+            }catch (NumberFormatException nfe){
+                // se è un numero che da eccezione probabilmente è lungo 16 caratteri ed è la stringa del codice fiscale
+                Utente utente = utenteRepository.findByCodiceFiscale(id);
+                // Non inserisco la password tra i valori ritornati
+                utente.setPassword(null);
+                UtenteDTO utenteDTO = new UtenteDTO(utente);
+                return utenteDTO;
+            }
+        }else{
+            Utente utente = utenteRepository.findByCodiceFiscale(id);
+            // Non inserisco la password tra i valori ritornati
+            utente.setPassword(null);
+            UtenteDTO utenteDTO = new UtenteDTO(utente);
+            return utenteDTO;
         }
     }
 
@@ -100,15 +136,20 @@ public class UtentiService {
     }
 
     @Transactional
-    public Utente eliminaUtenteById(String id){
+    public UtenteDTO eliminaUtenteById(String id){
         Utente utenteEliminato = selezionaUtenteById(id);
         utenteRepository.delete(utenteEliminato);
-        return utenteEliminato;
+        UtenteDTO utenteDTOEliminato = new UtenteDTO(utenteEliminato);
+        return utenteDTOEliminato;
     }
 
     @Transactional
     public void aggiornaImmagineUtente(String idUtente, MultipartFile file) throws IOException {
-        String path = "/images/";
+        String path = "./images/";
+        File pathAsFile = new File(path);
+        if (!Files.exists(Paths.get(path))) {
+            pathAsFile.mkdir();
+        }
         String filename = file.getOriginalFilename();
         System.out.println(path  + filename);
         File convFile = new File(path  + filename);

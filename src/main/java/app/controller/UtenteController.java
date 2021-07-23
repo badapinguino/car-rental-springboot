@@ -36,8 +36,8 @@ public class UtenteController {
 
     @RequestMapping("/api/utenti/{id}")
     @GetMapping
-    public Utente selezionaUtenteById(@PathVariable String id) {
-        return utentiService.selezionaUtenteById(id);
+    public UtenteDTO selezionaUtenteById(@PathVariable String id) {
+        return utentiService.selezionaUtenteDTOById(id);
     }
 
 
@@ -52,7 +52,7 @@ public class UtenteController {
 
     @RequestMapping(value = "/api/utenti/{id}", method = RequestMethod.DELETE)
 //    @DeleteMapping
-    public Utente eliminaUtenteById(@PathVariable String id) {
+    public UtenteDTO eliminaUtenteById(@PathVariable String id) {
         return utentiService.eliminaUtenteById(id);
     }
 
@@ -62,7 +62,11 @@ public class UtenteController {
     public void postImage(@PathVariable String idUtente, @RequestParam("file") MultipartFile file) throws IOException {
         System.out.println("received" + file);
         if(file!=null && file.getSize()>0) {
-            String path = "/images/";
+            String path = "./images/";
+            File pathAsFile = new File(path);
+            if (!Files.exists(Paths.get(path))) {
+                pathAsFile.mkdir();
+            }
             String filename = file.getOriginalFilename();
             System.out.println(path  + filename);
             File convFile = new File(path  + filename);

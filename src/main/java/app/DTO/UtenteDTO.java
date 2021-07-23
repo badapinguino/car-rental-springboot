@@ -1,6 +1,7 @@
 package app.DTO;
 
 import app.entity.Prenotazione;
+import app.entity.Utente;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.Size;
@@ -8,6 +9,22 @@ import java.time.LocalDate;
 import java.util.Set;
 
 public class UtenteDTO {
+
+    public UtenteDTO() {}
+
+    public UtenteDTO(Utente utente){
+        this.setCodiceFiscale(utente.getCodiceFiscale());
+        this.setCognome(utente.getCognome());
+        this.setNome(utente.getNome());
+        this.setDataNascita(utente.getDataNascita());
+        this.setEmail(utente.getEmail());
+        this.setId(utente.getId());
+        this.setSuperuser(utente.isSuperuser());
+        this.setImmagine(utente.getImmagine());
+        this.setVerificato(utente.isVerificato());
+        this.setPassword(utente.getPassword());
+        this.setPrenotazioni(utente.getPrenotazioni());
+    }
 
     private int id;
 

@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="Added email and verificato fields to Utente and added the manage of the subscription confirmation email">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="First commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/car-rental-springboot.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/DTO/UtenteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/DTO/UtenteDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +25,20 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1S0tY3S9J6DNvclfgYGtQdwsTBR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -123,6 +136,8 @@
       <workItem from="1621676886522" duration="1188000" />
       <workItem from="1621678235113" duration="319000" />
       <workItem from="1626725882610" duration="4670000" />
+      <workItem from="1626814342535" duration="744000" />
+      <workItem from="1626884706082" duration="12784000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -376,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572514285954</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="First commit">
+      <created>1626814649543</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1626814649544</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,7 +417,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created UtenteService. Modified UtenteController in a way where Service is called, and not directly UtenteRepository. I've done the APIs for the user saveOrUpdate and delete" />
     <MESSAGE value="UtenteDTO created and used in Controller and Service." />
     <MESSAGE value="Added /api/ to the path required to call the REST APIs." />
     <MESSAGE value="Added a select id and password API, but it doesn't work. There is a problem with the password encrypting, two password encrypted with the same algorithm results in a different hash.&#10;&#10;Solved the CORS problem with a Bean in WebSecurityConfig.java" />
@@ -420,7 +441,8 @@
     <MESSAGE value="Update works. Now it should be really finished." />
     <MESSAGE value="Removed some code commented and not used." />
     <MESSAGE value="Added the old password check on utente modifying." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the old password check on utente modifying." />
+    <MESSAGE value="First commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
