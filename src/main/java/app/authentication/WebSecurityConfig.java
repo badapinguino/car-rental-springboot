@@ -64,6 +64,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         //HttpMethod.GET,
                         "/",
                         "/completaIscrizione/*",
+                        "/registrati",
                         "/*.html",
                         "/favicon.ico",
                         "/**/*.html",

@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="Aggiunta modifica con creazione UtenteDTO partendo da Utente, e ritornato UtenteDTO senza password invece di Utente con password nei metodi dove possibile, in modo da non restituire la password come risposta alle chiamate.&#10;Fix problema cartella images.">
+    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="Cambiato login con email e password invece che codice fiscale e password.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/JwtUserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/JwtUserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entity/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/repository/UtenteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/repository/UtenteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +137,7 @@
       <workItem from="1621678235113" duration="319000" />
       <workItem from="1626725882610" duration="4670000" />
       <workItem from="1626814342535" duration="744000" />
-      <workItem from="1626884706082" duration="17180000" />
+      <workItem from="1626884706082" duration="21111000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -405,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627077095425</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Cambiato login con email e password invece che codice fiscale e password.">
+      <created>1627316920068</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1627316920068</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +431,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added /api/ to the path required to call the REST APIs." />
     <MESSAGE value="Added a select id and password API, but it doesn't work. There is a problem with the password encrypting, two password encrypted with the same algorithm results in a different hash.&#10;&#10;Solved the CORS problem with a Bean in WebSecurityConfig.java" />
     <MESSAGE value="Removed a TODO" />
     <MESSAGE value="Problema CORS che si è ripresentato. Ora risolto." />
@@ -449,7 +455,8 @@
     <MESSAGE value="Added the old password check on utente modifying." />
     <MESSAGE value="First commit" />
     <MESSAGE value="Aggiunta modifica con creazione UtenteDTO partendo da Utente, e ritornato UtenteDTO senza password invece di Utente con password nei metodi dove possibile, in modo da non restituire la password come risposta alle chiamate.&#10;Fix problema cartella images." />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta modifica con creazione UtenteDTO partendo da Utente, e ritornato UtenteDTO senza password invece di Utente con password nei metodi dove possibile, in modo da non restituire la password come risposta alle chiamate.&#10;Fix problema cartella images." />
+    <MESSAGE value="Cambiato login con email e password invece che codice fiscale e password." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambiato login con email e password invece che codice fiscale e password." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

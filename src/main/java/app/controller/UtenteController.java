@@ -41,7 +41,6 @@ public class UtenteController {
     }
 
 
-    // Qui però viene passata la password tra client e server in chiaro. Non è l'ideale.
     // Meglio inserire un DTO se no ogni volta che devo modificare un utente mi viene sprecato un id nel DB,
     //  perché viene assegnato all'utente temporaneo che poi viene sostituito
     //  con quello dell'utente da modificare presente nel DB
@@ -106,4 +105,8 @@ public class UtenteController {
         utentiService.aggiornaUtenteVerificato(idUtente, true);
     }
 
+    @RequestMapping(path = "/registrati", method = RequestMethod.POST)
+    public Utente registraUtente(@RequestBody UtenteDTO utenteDTO) {
+        return utentiService.registraUtente(utenteDTO);
+    }
 }

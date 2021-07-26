@@ -88,9 +88,13 @@ public class UtentiService {
         return utenteRepository.findByCodiceFiscale(codiceFiscale);
     }
 
+    private Utente selezionaUtenteByEmail(String email) {
+        return utenteRepository.findByEmail(email);
+    }
+
     @Transactional
     public Utente creaUtente(UtenteDTO utenteDTO) {
-        // codifico la password che mi arriva dal frontend in chiaro (e non so quanto vada bene)
+        // codifico la password che mi arriva dal frontend hashata
         utenteDTO.setPassword(passwordEncoder.encode(utenteDTO.getPassword()));
         // controllo se utente è verificato o altrimenti invio mail di conferma
         if(!utenteDTO.isVerificato()){
@@ -172,5 +176,37 @@ public class UtentiService {
     public void aggiornaUtenteVerificato(String idUtente, boolean verificato){
         Utente utenteDaAggiornareVerificato = selezionaUtenteById(idUtente);
         utenteRepository.updateUtenteVerificato(utenteDaAggiornareVerificato.getId(), verificato);
+    }
+
+    @Transactional
+    public Utente registraUtente(UtenteDTO utenteDTO) {
+        if(utenteDTO.getCodiceFiscale().length()!=Utente.getLunghezzaCampoCodiceFiscale()){
+            throw new RuntimeException("Il codice fiscale deve essere lungo " +
+                    Utente.getLunghezzaCampoCodiceFiscale() + " caratteri.");
+        }else if(utenteDTO.getNome().length()>Utente.getLunghezzaCampoNome()){
+            throw new RuntimeException("Il nome non può essere più lungo di " +
+                    Utente.getLunghezzaCampoNome() + " caratteri.");
+        }else if(utenteDTO.getCognome().length()>Utente.getLunghezzaCampoCognome()){
+            throw new RuntimeException("Il cognome non può essere più lungo di " +
+                    Utente.getLunghezzaCampoCognome() + " caratteri.");
+        }else if(utenteDTO.getDataNascita().compareTo(LocalDate.parse("1900-01-01")) < 0){
+            throw new RuntimeException("La data di nascita non può essere antecedente al 1900.");
+        }else if(utenteDTO.getDataNascita().compareTo(LocalDate.now()) > 0){
+            throw new RuntimeException("La data di nascita non può essere futura.");
+        }
+
+        // controllo se il codice fiscale è già presente nel database
+        Utente u = selezionaUtenteByCF(utenteDTO.getCodiceFiscale());
+        if (u != null && u.getNome() != null && u.getId() > 0) {
+            // ritorno un errore in quanto l'utente è già registrato
+            throw new RuntimeException("L'utente risulta già registrato al servizio.");
+        }
+        // controllo se l'email è già presente nel database
+        u = selezionaUtenteByEmail(utenteDTO.getEmail());
+        if (u != null && u.getNome() != null && u.getId() > 0) {
+            // ritorno un errore in quanto l'utente è già registrato
+            throw new RuntimeException("L'utente risulta già registrato al servizio.");
+        }
+        return creaUtente(utenteDTO);
     }
 }
