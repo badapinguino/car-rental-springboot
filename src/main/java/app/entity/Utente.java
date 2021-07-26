@@ -72,7 +72,7 @@ public class Utente implements Serializable {
     private boolean verificato;
 
     @NotNull
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
 
     @JsonIgnore

@@ -16,6 +16,8 @@ public interface UtenteRepository extends JpaRepository<Utente, Integer>{
 
     Utente findById(int id);
 
+    Utente findByEmail(String email);
+
     Utente save(Utente u);
 
     void delete(Utente u);
