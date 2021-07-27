@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="Cambiato login con email e password invece che codice fiscale e password.">
+    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="Aggiunta possibilità di registrarsi da parte di un utente, aggiunto quindi l'endpoint corrispondente e i metodi utilizzati come findByEmail e registraUtente.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/soaseckey.p12" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/authentication/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/authentication/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +57,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../car-rental-angular" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -67,6 +66,9 @@
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="app.error.exception" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\IdeaProjects\car-rental-springboot\src\main\resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -137,7 +139,7 @@
       <workItem from="1621678235113" duration="319000" />
       <workItem from="1626725882610" duration="4670000" />
       <workItem from="1626814342535" duration="744000" />
-      <workItem from="1626884706082" duration="21111000" />
+      <workItem from="1626884706082" duration="27364000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -412,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627316920068</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Aggiunta possibilità di registrarsi da parte di un utente, aggiunto quindi l'endpoint corrispondente e i metodi utilizzati come findByEmail e registraUtente.">
+      <created>1627335089111</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1627335089111</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +440,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added a select id and password API, but it doesn't work. There is a problem with the password encrypting, two password encrypted with the same algorithm results in a different hash.&#10;&#10;Solved the CORS problem with a Bean in WebSecurityConfig.java" />
     <MESSAGE value="Removed a TODO" />
     <MESSAGE value="Problema CORS che si è ripresentato. Ora risolto." />
     <MESSAGE value="Minor changes. Added X-Auth as an allowed Header in WebSecurityConfig." />
@@ -456,7 +464,8 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Aggiunta modifica con creazione UtenteDTO partendo da Utente, e ritornato UtenteDTO senza password invece di Utente con password nei metodi dove possibile, in modo da non restituire la password come risposta alle chiamate.&#10;Fix problema cartella images." />
     <MESSAGE value="Cambiato login con email e password invece che codice fiscale e password." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambiato login con email e password invece che codice fiscale e password." />
+    <MESSAGE value="Aggiunta possibilità di registrarsi da parte di un utente, aggiunto quindi l'endpoint corrispondente e i metodi utilizzati come findByEmail e registraUtente." />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta possibilità di registrarsi da parte di un utente, aggiunto quindi l'endpoint corrispondente e i metodi utilizzati come findByEmail e registraUtente." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
