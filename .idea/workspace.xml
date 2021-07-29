@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="Aggiunta possibilità di registrarsi da parte di un utente, aggiunto quindi l'endpoint corrispondente e i metodi utilizzati come findByEmail e registraUtente.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/soaseckey.p12" afterDir="false" />
+    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="Aggiunto certificato HTTPS e supporto ad HTTPS sulla porta 8443.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -139,7 +138,7 @@
       <workItem from="1621678235113" duration="319000" />
       <workItem from="1626725882610" duration="4670000" />
       <workItem from="1626814342535" duration="744000" />
-      <workItem from="1626884706082" duration="27364000" />
+      <workItem from="1626884706082" duration="32796000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -421,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627335089111</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Aggiunto certificato HTTPS e supporto ad HTTPS sulla porta 8443.">
+      <created>1627411414087</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1627411414087</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,7 +446,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed a TODO" />
     <MESSAGE value="Problema CORS che si è ripresentato. Ora risolto." />
     <MESSAGE value="Minor changes. Added X-Auth as an allowed Header in WebSecurityConfig." />
     <MESSAGE value="Deleted entities Multa and BuonoSconto." />
@@ -465,7 +470,8 @@
     <MESSAGE value="Aggiunta modifica con creazione UtenteDTO partendo da Utente, e ritornato UtenteDTO senza password invece di Utente con password nei metodi dove possibile, in modo da non restituire la password come risposta alle chiamate.&#10;Fix problema cartella images." />
     <MESSAGE value="Cambiato login con email e password invece che codice fiscale e password." />
     <MESSAGE value="Aggiunta possibilità di registrarsi da parte di un utente, aggiunto quindi l'endpoint corrispondente e i metodi utilizzati come findByEmail e registraUtente." />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta possibilità di registrarsi da parte di un utente, aggiunto quindi l'endpoint corrispondente e i metodi utilizzati come findByEmail e registraUtente." />
+    <MESSAGE value="Aggiunto certificato HTTPS e supporto ad HTTPS sulla porta 8443." />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto certificato HTTPS e supporto ad HTTPS sulla porta 8443." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -473,7 +479,7 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/app/authentication/AuthenticationRestController.java</url>
           <line>32</line>
-          <option name="timeStamp" value="17" />
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
