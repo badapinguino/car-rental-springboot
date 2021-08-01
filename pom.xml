@@ -7,6 +7,7 @@
     <groupId>com.daniele.si2001</groupId>
     <artifactId>car-rental-springboot</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -108,6 +109,22 @@
             <version>1.6.2</version>
         </dependency>
 
+
+
+        <!-- Per dirgli che deve essere eseguito su un tomcat esterno -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JDK 9/10 support -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
     </dependencies>
 
     <properties>
@@ -116,6 +133,7 @@
 
 
     <build>
+        <finalName>CarRentalApiService</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

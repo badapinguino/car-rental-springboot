@@ -103,7 +103,7 @@ public class UtentiService {
             Mailer.send("carrental.badapinguino@gmail.com","carrental",utenteDTO.getEmail(),
                     "Completa la registrazione",
                     "Per completare l'iscrizione su Car Rental clicca sul link seguente: \n" +
-                            "http://localhost:4200/completaIscrizione?codiceFiscale=" + utenteDTO.getCodiceFiscale());
+                            "https://localhost:4200/completaIscrizione?codiceFiscale=" + utenteDTO.getCodiceFiscale());
         }
         //mappare con map utenteDTO su utente
         Utente utente = mapper.map(utenteDTO, Utente.class);

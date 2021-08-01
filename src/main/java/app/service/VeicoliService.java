@@ -37,10 +37,10 @@ public class VeicoliService {
     @Transactional
     public Veicolo creaModificaVeicolo(VeicoloDTO veicoloDTO) {
         if(veicoloDTO.getCasaCostruttrice().length()>Veicolo.getLunghezzaCampoCasaCostruttrice()){
-            throw new RuntimeException("Il nome della casa costruttrice non può superare i " +
+            throw new RuntimeException("Il nome della casa costruttrice non può superare " +
                     Veicolo.getLunghezzaCampoCasaCostruttrice() + " caratteri.");
         }else if(veicoloDTO.getModello().length()>Veicolo.getLunghezzaCampoModello()){
-            throw new RuntimeException("La casa costruttrice non può superare i " +
+            throw new RuntimeException("Il nome del modello non può superare " +
                     Veicolo.getLunghezzaCampoModello() + " caratteri.");
         }else if(veicoloDTO.getCodiceMezzo().length()>Veicolo.getLunghezzaCampoCodiceMezzo()){
             throw new RuntimeException("Il codice del mezzo non può superare i " +
