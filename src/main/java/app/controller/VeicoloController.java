@@ -3,6 +3,7 @@ package app.controller;
 import app.DTO.VeicoloDTO;
 import app.entity.Veicolo;
 import app.service.VeicoliService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,11 +29,13 @@ public class VeicoloController {
         return veicoliService.selezionaVeicolo(id);
     }
 
+    @PreAuthorize("hasAuthority('Admin')")
     @RequestMapping(path = "/api/veicoli", method = RequestMethod.POST)
     public Veicolo creaModificaVeicolo(@RequestBody VeicoloDTO veicoloDTO) {
         return veicoliService.creaModificaVeicolo(veicoloDTO);
     }
 
+    @PreAuthorize("hasAuthority('Admin')")
     @RequestMapping(value = "/api/veicoli/{id}", method = RequestMethod.DELETE)
     public Veicolo eliminaVeicoloById(@PathVariable String id) {
         return veicoliService.eliminaVeicoloById(id);

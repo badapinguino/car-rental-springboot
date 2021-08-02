@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="Cambiato il JWT Secret">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c3f471d4-8e31-4cce-a79f-ffcc64e5128c" name="Default Changelist" comment="Aggiunta modalità per pubblicazione in WAR e Tomcat esterno.&#10;Fixato un messaggio di eccezione sbagliato in creaModificaVeicolo.&#10;Fixato https nel messaggio via email.&#10;Rimossa creazione utente amministratore di base se non è già esistente.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/UtentiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/service/VeicoliService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/service/VeicoliService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/PrenotazioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/PrenotazioneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/UtenteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controller/VeicoloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controller/VeicoloController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +154,7 @@
       <workItem from="1626725882610" duration="4670000" />
       <workItem from="1626814342535" duration="744000" />
       <workItem from="1626884706082" duration="38416000" />
-      <workItem from="1627578405777" duration="28095000" />
+      <workItem from="1627578405777" duration="40154000" />
     </task>
     <task id="LOCAL-00001" summary="Commit .ida/vcs.xml and .idea/workspace.xml">
       <created>1570715382728</created>
@@ -452,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627550456888</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Aggiunta modalità per pubblicazione in WAR e Tomcat esterno.&#10;Fixato un messaggio di eccezione sbagliato in creaModificaVeicolo.&#10;Fixato https nel messaggio via email.&#10;Rimossa creazione utente amministratore di base se non è già esistente.">
+      <created>1627854416369</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1627854416369</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +476,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Minor changes. Added X-Auth as an allowed Header in WebSecurityConfig." />
     <MESSAGE value="Deleted entities Multa and BuonoSconto." />
     <MESSAGE value="Created VeicoloDTO, repository, controller and service. They are not finished yet." />
     <MESSAGE value="Created all REST APIs for Veicolo." />
@@ -496,7 +500,8 @@
     <MESSAGE value="Aggiunta possibilità di registrarsi da parte di un utente, aggiunto quindi l'endpoint corrispondente e i metodi utilizzati come findByEmail e registraUtente." />
     <MESSAGE value="Aggiunto certificato HTTPS e supporto ad HTTPS sulla porta 8443." />
     <MESSAGE value="Cambiato il JWT Secret" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambiato il JWT Secret" />
+    <MESSAGE value="Aggiunta modalità per pubblicazione in WAR e Tomcat esterno.&#10;Fixato un messaggio di eccezione sbagliato in creaModificaVeicolo.&#10;Fixato https nel messaggio via email.&#10;Rimossa creazione utente amministratore di base se non è già esistente." />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta modalità per pubblicazione in WAR e Tomcat esterno.&#10;Fixato un messaggio di eccezione sbagliato in creaModificaVeicolo.&#10;Fixato https nel messaggio via email.&#10;Rimossa creazione utente amministratore di base se non è già esistente." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

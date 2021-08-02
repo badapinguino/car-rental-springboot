@@ -5,6 +5,7 @@ import app.entity.Utente;
 import app.service.UtentiService;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -28,12 +29,14 @@ public class UtenteController {
         this.mapper = new ModelMapper();
     }
 
+    @PreAuthorize("hasAuthority('Admin')")
     @GetMapping
     @RequestMapping("/api/utenti")
     public List selezionaTuttiUtenti(){
         return utentiService.selezionaTuttiUtenti();
     }
 
+    @PreAuthorize("#id == authentication.name || hasAuthority('Admin')")
     @RequestMapping("/api/utenti/{id}")
     @GetMapping
     public UtenteDTO selezionaUtenteById(@PathVariable String id) {
@@ -44,11 +47,13 @@ public class UtenteController {
     // Meglio inserire un DTO se no ogni volta che devo modificare un utente mi viene sprecato un id nel DB,
     //  perché viene assegnato all'utente temporaneo che poi viene sostituito
     //  con quello dell'utente da modificare presente nel DB
+    @PreAuthorize("#utenteDTO.codiceFiscale == authentication.name || hasAuthority('Admin')")
     @RequestMapping(path = "/api/utenti", method = RequestMethod.POST)
     public Utente creaModificaUtente(@RequestBody UtenteDTO utenteDTO) {
         return utentiService.creaModificaUtente(utenteDTO);
     }
 
+    @PreAuthorize("hasAuthority('Admin')")
     @RequestMapping(value = "/api/utenti/{id}", method = RequestMethod.DELETE)
 //    @DeleteMapping
     public UtenteDTO eliminaUtenteById(@PathVariable String id) {
@@ -57,6 +62,7 @@ public class UtenteController {
 
 
 
+    @PreAuthorize("#idUtente == authentication.name || hasAuthority('Admin')")
     @PostMapping(value = "/api/upload/{idUtente}")
     public void postImage(@PathVariable String idUtente, @RequestParam("file") MultipartFile file) throws IOException {
         System.out.println("received" + file);
@@ -82,6 +88,7 @@ public class UtenteController {
     }
 
 
+    @PreAuthorize("#idUtente == authentication.name || hasAuthority('Admin')")
     @GetMapping(
         value = "/api/immagineProfilo/{idUtente}",
         produces = MediaType.IMAGE_JPEG_VALUE
